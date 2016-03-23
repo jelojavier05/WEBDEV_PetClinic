@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//maintenance route
+Route::resource('/maintenance/animal', 'AnimalController');
+
+Route::resource('/maintenance/breed', 'BreedController');
+
+Route::resource('/maintenance/medicalservice', 'MedicalServiceController');
+
+Route::resource('/maintenance/groomservice', 'GroomServiceController');
+
+
+//login route
+Route::get('account/login', 'Auth\AuthController@getLogin');
+
+
+//registration route
+Route::get('account/register', 'Auth\AuthController@getRegister');
