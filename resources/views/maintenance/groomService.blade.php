@@ -16,7 +16,7 @@ Grooming Service
 		
 				  <div class="row">
 					<div class="col s12">
-						<div class="container grey lighten-1 z-depth-2" style="border-radius: 10px; margin-left:300px; margin-top:40px;">
+						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px; margin-left:300px; margin-top:40px;">
 				<div class="row">
 					<div class="col s6 push-s1">
 						<h2 class="orange-text">Grooming Service</h2>
