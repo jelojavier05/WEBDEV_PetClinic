@@ -34,6 +34,8 @@ Grooming Service
 
 								<thead>
 									<tr>
+										<th style="width:10px;"></th>
+										<th style="width:10px;"></th>
 										<th>ID</th>
 										<th>Name</th>
 										<th>Description</th>
@@ -42,6 +44,10 @@ Grooming Service
 								
 								<tbody>
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Haircut</td>
 										<td>haircut</td>
@@ -49,6 +55,10 @@ Grooming Service
 									</tr>
 									
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Pet Bath</td>
 										<td>shampoo, shower</td>

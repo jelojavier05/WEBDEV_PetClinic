@@ -13,7 +13,7 @@
 <!--	  <link rel="stylesheet" type="text/css" media="screen,projection" href="{{!! URL::asset('../css/materialize.min.css') !!}"/>-->
 	  <link href="{!! URL::asset('../css/style.css') !!}" type="text/css" rel="stylesheet"/>
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-<!--	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	  
 	  <script type="text/javascript" src="{!! URL::asset('../js/jquery-2.1.1.min.js') !!}"></script>
 <!--	  <script type="text/javascript" src="{{!! URL::asset('../js/materialize.js') !!}}"></script>-->
@@ -100,7 +100,7 @@
 								</br>
 					
 								<div class="center">
-									Sign in with <a href="#">Facebook</a>
+									Sign in with <a href="#"><i class="mdi-facebook"></i>Facebook</a>
 								</div>
 								
 						</div>

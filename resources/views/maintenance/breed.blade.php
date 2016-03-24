@@ -34,6 +34,8 @@ Breed
 
 								<thead>
 									<tr>
+										<th style="width:10px;"></th>
+										<th style="width:10px;"></th>
 										<th>ID</th>
 										<th>Name</th>
 										<th>Pet Type</th>
@@ -42,6 +44,10 @@ Breed
 								
 								<tbody>
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Labrador Retriever</td>
 										<td>Dog</td>
@@ -49,6 +55,10 @@ Breed
 									</tr>
 									
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Persian</td>
 										<td>Cat</td>

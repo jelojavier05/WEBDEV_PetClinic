@@ -33,6 +33,8 @@ Animal/Pet
 
 								<thead>
 									<tr>
+										<th style="width:10px;"></th>
+										<th style="width:10px;"></th>
 										<th>ID</th>
 										<th>Name</th>
 									</tr>
@@ -40,12 +42,20 @@ Animal/Pet
 								
 								<tbody>
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Dog</td>
 									
 									</tr>
 									
 									<tr>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+            							<label for="edit"></label></td>
+                        
+                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Cat</td>
 									
