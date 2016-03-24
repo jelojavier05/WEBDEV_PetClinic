@@ -44,7 +44,7 @@ Breed
 								
 								<tbody>
 									<tr>
-										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalbreedEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
@@ -55,7 +55,7 @@ Breed
 									</tr>
 									
 									<tr>
-										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalbreedEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
@@ -127,7 +127,60 @@ Breed
     		</div>
 <!--				 </form> -->
 		</div>
-			<!--=========================Modal add pet start=============-->
+			<!--=========================Modal add pet end=============-->
+<!--============================ modal breed update ===================-->
+	<div id="modalbreedEdit" class="modal modal-fixed-footer" style="overflow:hidden;">
+        <div class="modal-header orange"><h2 class="white-text">Update Breed</h2></div>
+        	<div class="modal-content">
+
+					
+				
+				
+					<div class="row">
+						<div class="col s8">
+							<div class="input-field">
+								<input  id="intbreedID" type="text" class="validate" name = "" disabled>
+									<label for="intbreedID">Breed ID</label>
+							</div>
+						</div>
+					</div>
+				
+				    <div class="row">
+						<div class="col s5">
+							<div>
+								<label for="strbreedName">Pet Type</label> 
+								<select>
+									<option>Dog</option>
+									<option>Cat</option>
+								</select>
+									
+							</div>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="col s5">
+							<div class="input-field">
+								<input id="strbreedName" type="text" class="validate" name = "" required="" aria-required="true">
+									<label for="strbreedName">Breed Name</label> 
+							</div>
+						</div>
+					</div>
+					
+				
+						
+	<!-- Modal Button Save -->
+				
+		<div class="modal-footer">
+			<button class="btn waves-effect waves-light" name="action" style="margin-right: 30px;" id = "btnAddSave">Save
+    			<i class="material-icons right">send</i>
+  			</button>
+    	</div>
+    		</div>
+<!--				 </form> -->
+		</div>
+			<!--=========================Modal update pet start=============-->
+
 @stop
 
 @section('script')

@@ -44,7 +44,7 @@ Medical Service
 								
 								<tbody>
 									<tr>
-										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalmedicalserviceEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
@@ -55,7 +55,7 @@ Medical Service
 									</tr>
 									
 									<tr>
-										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalnobEdit" ><i class="material-icons">edit</i></button>
+										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalmedicalserviceEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
@@ -118,6 +118,50 @@ Medical Service
 <!--				 </form> -->
 		</div>
 			<!--=========================Modal add med service end=============-->
+<!-- ========================== Modal Medical Service update ===================-->
+	<div id="modalmedicalserviceEdit" class="modal modal-fixed-footer" style="overflow:hidden;">
+        <div class="modal-header orange"><h2 class="white-text">Update Medical Service</h2></div>
+        	<div class="modal-content">
+
+					<div class="row">
+						<div class="col s8">
+							<div class="input-field">
+								<input  id="intServiceID" type="text" class="validate" name = "" disabled>
+									<label for="intServiceID">Medical Service ID</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s5">
+							<div class="input-field">
+								<input id="strServiceName" type="text" class="validate" name = "" required="" aria-required="true">
+									<label for="strServiceName">Medical Service Name</label> 
+							</div>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="col s5">
+							<div class="input-field">
+								<input id="strdescName" type="text" class="validate" name = "" required="" aria-required="true">
+									<label for="strdescName">Medical Service Description</label> 
+							</div>
+						</div>
+					</div>
+				
+						
+	<!-- Modal Button Save -->
+				
+		<div class="modal-footer">
+			<button class="btn waves-effect waves-light" name="action" style="margin-right: 30px;" id = "btnAddSave">Save
+    			<i class="material-icons right">send</i>
+  			</button>
+    	</div>
+    		</div>
+<!--				 </form> -->
+		</div>
+			<!--=========================Modal update med service end=============-->
+
 @stop
 
 @section('script')
