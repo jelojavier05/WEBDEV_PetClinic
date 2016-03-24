@@ -56,11 +56,14 @@
 			<div class="orange lighten-2-text">
 			<legend class="white-text"><h2>Registration</h2></legend>
 			</div>
-				<div class="container-fluid" style="margin:3%">
-					<form>
+<!--				<div class="container-fluid" style="margin:3%">-->
+				
+				<form>
+					
 					<div class="row">
-						<div class="col s6">
-							
+						
+						<div class="col s7 push-s2" style="margin:1%;">
+						   <h4>Personal Data</h4>
 							<div class="input-field col s12">
 								<input  id="firstName" type="text" class="validate" pattern="[A-za-z ][^0-9]{2,}" required="" aria-required="true" >
                                 <label data-error="Incorrect" for="firstName">First Name</label>
@@ -91,37 +94,18 @@
                                 <label data-error="Incorrect" for="contactLandline">Contact Number (Landline)</label>
 							</div>
 							
+							
+							
+						   
 						</div>
 						
-						<div class="col s6">
-							<div class="col s12 orange-text">
-								<label>Pet</label>
-								 <select>
-                                    <option value="" disabled selected>Choose</option>
-                                    <option value="1">Dog</option>
-                                    <option value="2">Cat</option>
-                                 </select>
-                                            
-							</div>
-							
-							<div class="col s12 orange-text">
-								<label>Breed</label>
-								 <select>
-                                    <option value="" disabled selected>Choose</option>
-                                    <option value="1">Labrador Retriever</option>
-                                    <option value="2">Persian</option>
-                                 </select>
-                                            
-							</div>
-							
-							<div>
-								<a class="waves-effect waves-light btn-large orange right">OK<i class="material-icons right">send</i></a>
-							</div>
-						</div>
+						
+						
+					
 					</div>
 					
 					</form>
-				</div>
+<!--				</div>-->
 		</div>
 		
 		

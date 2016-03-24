@@ -61,7 +61,7 @@
                             <div class="collapsible-body grey lighten-2">
                                 <ul >
                                             <li>
-												<a href="/maintenance/animal"><i class="material-icons left">add</i>Pet</a>
+												<a href="/maintenance/animal"><i class="material-icons left">add</i>Animal Species</a>
 											</li>
 													
 												

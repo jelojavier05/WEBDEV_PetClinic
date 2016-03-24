@@ -17,11 +17,11 @@ Animal/Pet
 					<div class="col s12">
 						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px;margin-left:300px; margin-top:40px;">
 							<div class="row">
-								<div class="col s4 push-s1">
-									<h2 class="orange-text">Pet</h2>
+								<div class="col s5 push-s1">
+									<h2 class="orange-text">Animal Species</h2>
 								</div>
 
-								<div class="col s2 offset-s4">
+								<div class="col s2 offset-s3">
 									<button style="margin-top: 30px;" id="btnAdd" class=" z-depth-2 btn-large green modal-trigger" href="#modaladdPet"><i class="material-icons left">add</i> ADD</button>
 								</div>
 	    		  </div>
@@ -73,14 +73,14 @@ Animal/Pet
 				  <!-- ==========================Table add pet end===================-->
 	<!-- ==================modal pet add====================-->			
 	<div id="modaladdPet" class="modal modal-fixed-footer" style="overflow:hidden;">
-        <div class="modal-header orange"><h2 class="white-text">Add Pet</h2></div>
+        <div class="modal-header orange"><h2 class="white-text">Add Animal Species</h2></div>
         	<div class="modal-content">
 
 					<div class="row">
 						<div class="col s8">
 							<div class="input-field">
 								<input  id="intpetID" type="text" class="validate" name = "" disabled>
-									<label for="intpetID">Pet ID</label>
+									<label for="intpetID">Animal Species ID</label>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@ Animal/Pet
 						<div class="col s5">
 							<div class="input-field">
 								<input id="strpetName" type="text" class="validate" name = "" required="" aria-required="true">
-									<label for="strpetName">Pet Name</label> 
+									<label for="strpetName">Animal Species Name</label> 
 							</div>
 						</div>
 					</div>
@@ -107,14 +107,14 @@ Animal/Pet
 			<!--=========================Modal add pet end=============-->
 <!-- ==================modal pet update====================-->			
 	<div id="modalanimalEdit" class="modal modal-fixed-footer" style="overflow:hidden;">
-        <div class="modal-header orange"><h2 class="white-text">Update Pet</h2></div>
+        <div class="modal-header orange"><h2 class="white-text">Update Animal Species</h2></div>
         	<div class="modal-content">
 
 					<div class="row">
 						<div class="col s8">
 							<div class="input-field">
 								<input  id="intpetID" type="text" class="validate" name = "" disabled>
-									<label for="intpetID">Pet ID</label>
+									<label for="intpetID">Animal Species ID</label>
 							</div>
 						</div>
 					</div>
@@ -122,7 +122,7 @@ Animal/Pet
 						<div class="col s5">
 							<div class="input-field">
 								<input id="strpetName" type="text" class="validate" name = "" required="" aria-required="true">
-									<label for="strpetName">Pet Name</label> 
+									<label for="strpetName">Animal Species Name</label> 
 							</div>
 						</div>
 					</div>
