@@ -55,4 +55,9 @@
      color: #ffcc80 !important;
    }
 
+.checkbox-orange[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #ff9800;
+     background-color: #ff9800;
+}
+
 
