@@ -38,6 +38,7 @@
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
 				<li><a class="red" href="#">Logout</a></li>
+			  </ul>
 			  <div class="side-nav fixed grey darken-3">
 				  <div class="card-panel orange">
 				  	<div class="card-content">
