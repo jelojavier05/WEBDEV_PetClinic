@@ -93,7 +93,9 @@
 								<input  id="contactLandline" maxlength="10" type="text" class="validate" pattern="[0-9+]{7,}" required="" aria-required="true">
                                 <label data-error="Incorrect" for="contactLandline">Contact Number (Landline)</label>
 							</div>
-							
+							<div style="margin:2%;">
+								<button class="waves-effect waves-light btn-large orange right" type="submit">Ok<i class="material-icons right">send</i></button>
+							</div>
 							
 							
 						   

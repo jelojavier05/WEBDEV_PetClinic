@@ -25,6 +25,8 @@ Route::resource('/maintenance/medicalservice', 'MedicalServiceController');
 
 Route::resource('/maintenance/groomservice', 'GroomServiceController');
 
+Route::resource('/maintenance/schedule', 'ScheduleController');
+
 
 //login route
 Route::get('account/login', 'Auth\AuthController@getLogin');
@@ -32,3 +34,8 @@ Route::get('account/login', 'Auth\AuthController@getLogin');
 
 //registration route
 Route::get('account/register', 'Auth\AuthController@getRegister');
+
+//mga nagagawa ng client
+Route::resource('client/viewpets', 'ViewPetsController');
+Route::resource('client/addpet', 'AddPetController');
+Route::resource('client/inquire', 'InquireController');

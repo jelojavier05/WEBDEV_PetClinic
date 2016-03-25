@@ -29,10 +29,8 @@
 	<header>
 	</header>
 	<main>
-	<body>
-		
-		
-		
+	<body style="overflow-x:hidden;">
+
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
@@ -40,54 +38,36 @@
 			  <div class="side-nav fixed grey darken-3">
 				  <div class="card-panel orange">
 				  	<div class="card-content">
-						<div class="center"><img class="responsive circle" src="{!! URL::asset('../images/doctor.jpg') !!}" width="100px" height="100px"></div>
-						<h5 class="center">Hello Doctor</h5>
+						<div class="center"><img class="responsive circle" src="{!! URL::asset('../images/owner.jpg') !!}" width="150px" height="150px"></div>
+						<h5 class="center">Hello Person</h5>
 					</div>
 					
 					
 				  </div>
 				  
 				  <ul class="collapsible collapsible-accordion">
-					<li class="bold" style="width:280px;">
-						<a class="collapsible-header white-text" href="admin_panel.html">
-							<i class="material-icons">people</i>Appointments
+                    
+					  <li class="bold" style="width:280px;">
+						<a class="white-text" href="/client/viewpets">
+							<i class="material-icons left">pets</i>Pets
 						</a>	  
-					</li>
+					  </li>
 					  
-                    <li class="bold" style="width:280px;">
-						<a class="collapsible-header white-text" href="#">
-							<i class="material-icons">settings</i>Maintenance<i class="mdi-navigation-arrow-drop-down right"></i>
+					  <li class="bold" style="width:280px;">
+						<a class="white-text" href="/client/addpet">
+							<i class="material-icons left">add</i>Add Pet
+						</a>	  
+					  </li>
+					  
+					  <li class="bold" style="width:280px;">
+						<a class="white-text" href="/client/inquire">
+							<i class="material-icons left">people</i>Inquire
 						</a>
-                            <div class="collapsible-body grey lighten-2">
-                                <ul >
-                                            <li>
-												<a href="/maintenance/animal"><i class="material-icons left">add</i>Animal Species</a>
-											</li>
-													
-												
-                                             <li>
-												<a href="/maintenance/breed"><i class="material-icons left">add</i>Breed</a>
-											</li>
-									
-											<li>
-												<a href="/maintenance/medicalservice"><i class="material-icons left">add</i>Medical Service</a>
-											</li>
-											
-											<li>
-												<a href="/maintenance/groomservice"><i class="material-icons left">add</i>Grooming Service</a>
-											</li>
-									
-											<li>
-												<a href="/maintenance/schedule"><i class="material-icons left">add</i>Schedule</a>
-											</li>
-								</ul>
-				
-			  				</div>
+                            
 					  </li>
 				  </ul>
 	    </nav>
-		
-		
+				
 	@yield('content')
 	@yield('script')
 	<script>
@@ -106,6 +86,3 @@
 	</body>
 	</main>
 </html>
-		
-		
-	
