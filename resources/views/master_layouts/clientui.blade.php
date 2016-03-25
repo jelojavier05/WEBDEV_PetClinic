@@ -35,6 +35,9 @@
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
 			  <a href="mainLayout.html" class="brand-logo center">Logo</a>
+			  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="#"></a></li>
+				<li><a class="red" href="#">Logout</a></li>
 			  <div class="side-nav fixed grey darken-3">
 				  <div class="card-panel orange">
 				  	<div class="card-content">
