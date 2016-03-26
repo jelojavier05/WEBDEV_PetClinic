@@ -116,43 +116,23 @@ Schedule
 							
 <!--								<div class="input-field">-->
 									<label for="intFromtime">From</label>
-									<input  id="intFromtime" type="number" min="1" max="12" class="validate" name = "">
+									<input  id="intFromtime" type="number" min="1" max="24" class="validate" name = "">
 <!--								</div>-->
 							
 						</div>
 						
-						<div class="col s5">
-							<div>
-								<label for="strShiftfrom" style="visibility:hidden;">test</label> 
-								<select>
-									<option>AM</option>
-									<option>PM</option>
-								</select>
-									
-							</div>
-						</div>
-					</div>
+						
 					
-					<div class="row">
 						<div class="col s5">
 							
 <!--								<div class="input-field">-->
 									<label for="intTotime">To</label>
-									<input  id="intTotime" type="number" min="1" max="12" class="validate" name = "">
+									<input  id="intTotime" type="number" min="1" max="24" class="validate" name = "">
 <!--								</div>-->
 							
 						</div>
 						
-						<div class="col s5">
-							<div>
-								<label for="strShiftto" style="visibility:hidden;">test</label> 
-								<select>
-									<option>AM</option>
-									<option>PM</option>
-								</select>
-									
-							</div>
-						</div>
+						
 					</div>
 				
 						
@@ -169,7 +149,7 @@ Schedule
 			<!--=========================Modal add schedule end=============-->
 				
 		<!--============================ modal schedule update ===================-->
-	<div id="modalscheduleEdit" class="modal modal-fixed-footer" style="overflow:hidden; height:900px !important;">
+	<div id="modalscheduleEdit" class="modal modal-fixed-footer" style="overflow:hidden; width:500px !important;">
         <div class="modal-header orange"><h2 class="white-text">Update Schedule</h2></div>
         	<div class="modal-content">
 
@@ -199,43 +179,23 @@ Schedule
 							
 <!--								<div class="input-field">-->
 									<label for="intFromtime">From</label>
-									<input  id="intFromtime" type="number" min="1" max="12" class="validate" name = "">
+									<input  id="intFromtime" type="number" min="1" max="24" class="validate" name = "">
 <!--								</div>-->
 							
 						</div>
 						
-						<div class="col s2">
-							<div>
-								<label for="strShiftfrom" style="visibility:hidden;">test</label> 
-								<select>
-									<option>AM</option>
-									<option>PM</option>
-								</select>
-									
-							</div>
-						</div>
-					</div>
+						
 					
-					<div class="row">
 						<div class="col s2">
 							
 <!--								<div class="input-field">-->
 									<label for="intTotime">To</label>
-									<input  id="intTotime" type="number" min="1" max="12" class="validate" name = "">
+									<input  id="intTotime" type="number" min="1" max="24" class="validate" name = "">
 <!--								</div>-->
 							
 						</div>
 						
-						<div class="col s2">
-							<div>
-								<label for="strShiftto" style="visibility:hidden;">test</label> 
-								<select>
-									<option>AM</option>
-									<option>PM</option>
-								</select>
-									
-							</div>
-						</div>
+						
 					</div>
 				
 						
