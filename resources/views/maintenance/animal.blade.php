@@ -13,6 +13,7 @@ Animal/Pet
 </div>
 				  <!-- ============== background image end =============== -->
 				  
+
 <div class="row">
     <div class="col s12 push-s1">
         <div class="container grey lighten-2 z-depth-2" style="border-radius: 10px; margin-top:40px;">
@@ -47,10 +48,9 @@ Animal/Pet
                                 <label for="{{$animal->intAnimalID}}"></label></td>
 
                                 <td>
-                                    <form method="post" action>
-                                        <button input = "submit" class="btn red" id="{{$animal->intAnimalID}}"><i class="material-icons">delete</i></button>
-                                    </form>
+                                    <button class="buttonDelete btn red modal-trigger" id="{{$animal->intAnimalID}}" href="#modalanimalDelete"><i class="material-icons">delete</i></button>
                                 </td>
+                        
                                 <td id = "tableID{{$animal->intAnimalID}}"> {{$animal->intAnimalID}} </td>
                                 <td id = "tableName{{$animal->intAnimalID}}"> {{$animal->strAnimalName}} </td>
 
@@ -63,6 +63,7 @@ Animal/Pet
         </div>
       </div>
 </div>
+
 				  <!-- ==========================Table add pet end===================-->
     
     <!-- ==========================checking in database===================-->
@@ -72,6 +73,8 @@ Animal/Pet
             <input type="hidden" value="Record Updated." id = "checkerID">
         @elseif (session('message') == "Record Exist.")
             <input type="hidden" value="Record Exist." id = "checkerID">
+         @elseif (session('message') == "Record Deleted.")
+            <input type="hidden" value="Record Deleted." id = "checkerID">
         @else
             <input type="hidden" value="" id = "checkerID">
         @endif
@@ -79,6 +82,7 @@ Animal/Pet
 
 	<!-- ==================modal pet add====================-->			
 	<div id="modaladdPet" class="modal modal-fixed-footer" style="overflow:hidden;">
+
         <form method="post" action="{{action('AnimalController@store')}}">
             <div class="modal-header orange"><h2 class="white-text">Add Animal Species</h2></div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">	
@@ -97,6 +101,7 @@ Animal/Pet
                             <input id="PetNameAdd" type="text" class="validate" name = "animal" required="" aria-required="true">
                                 <label for="PetNameAdd">Animal Species Name</label> 
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -105,7 +110,9 @@ Animal/Pet
                     </button>
                 </div>
             </div>
+
        </form>
+
     </div>
 			<!--=========================Modal add pet end=============-->
             
@@ -118,8 +125,8 @@ Animal/Pet
                 <div class="row">
                     <div class="col s8">
                         <div class="input-field">
-                            <input  id="editIDModal" type="text" class="validate" name = "idEdit" readonly value =" ">
-                                <label for="PetNameEdit">Animal Species ID</label>
+                            <input id="editIDModal" type="text" class="validate" name = "idEdit" readonly value =" ">
+                            <label for="PetNameEdit">Animal Species ID</label>
                         </div>
                     </div>
                 </div>
@@ -127,7 +134,7 @@ Animal/Pet
                     <div class="col s5">
                         <div class="input-field">
                             <input id="editNameModal" type="text" class="validate" name = "nameEdit" required="" aria-required="true" value =" ">
-                                <label for="strpetName">Animal Species Name</label> 
+                            <label for="strpetName">Animal Species Name</label> 
                         </div>
                     </div>
                 </div>
@@ -139,7 +146,31 @@ Animal/Pet
             </div>
         </form>
     </div>
-			<!--=========================Modal update pet end=============-->
+            <!--=========================Modal delete animal start=============-->
+    <div id="modalanimalDelete" class="modal bottom-sheet" style="height: 250px !important; overflow:hidden;">
+        <form method="post" action="{{action('AnimalController@destroy')}}">
+            <div class="modal-header orange"><h2 class="white-text">Delete</h2></div>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="modal-content">
+
+                <div class="row">
+                    <div class="col s12">
+                        <h3 class="center">Confirm Delete</h3>
+                    </div>
+                </div>
+                <input type="hidden" name="idDelete" id = "deleteID">
+                <div class="row">
+                    <div class="col s3 push-s5">
+                        <button class=" btn waves-effect waves-light red large" name="action" style="margin-left: 20px;">
+                            <i class="material-icons left">delete</i>Delete
+                        </button>
+
+                    </div>	
+                </div>
+
+            </div>
+        </form>
+    </div>
 
 @stop
 @section('script')
@@ -151,10 +182,12 @@ Animal/Pet
             "lengthMenu": [5,10,15,20]
         });
 
+
     });	
     
     $(function(){
         $(".buttonUpdate").click(function(){
+
 
 			var itemID = "tableID" + this.id;
 			var itemName = "tableName" + this.id;
@@ -167,7 +200,8 @@ Animal/Pet
     
     $(function(){
         $(".buttonDelete").click(function(){
-            alert($("#"+itemID).html());
+            document.getElementById('deleteID').value =this.id;
+            alert(this.id);
 		});
     });
     

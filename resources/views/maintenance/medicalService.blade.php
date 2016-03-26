@@ -53,7 +53,7 @@ Medical Service
                                     </td>
 
                                     <td>
-                                        <button class="buttonDelete btn red" id="delete">
+                                        <button class="buttonDelete btn red modal-trigger" id="{{$medicalservice->intMedicalServiceID}}" href="#modalmedserviceDelete">
                                             <i class="material-icons">delete</i>
                                         </button>
                                     </td>
@@ -77,6 +77,8 @@ Medical Service
         <input type="hidden" value="Record Updated." id = "checkerID">
     @elseif (session('message') == "Record Exist.")
         <input type="hidden" value="Record Exist." id = "checkerID">
+    @elseif (session('message') == "Record Deleted.")
+        <input type="hidden" value="Record Deleted." id = "checkerID">  
     @else
         <input type="hidden" value="" id = "checkerID">
     @endif				    
@@ -172,6 +174,29 @@ Medical Service
         </form>
     </div>
 
+<!--=========================Modal delete med service start=============-->
+    <div id="modalmedserviceDelete" class="modal bottom-sheet" style="height: 250px !important; overflow:hidden;">
+        <form method="post" action="{{action('MedicalServiceController@destroy')}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="modal-header orange"><h2 class="white-text">Delete</h2></div>
+            <div class="modal-content">
+                    
+                <div class="row">
+                    <div class="col s12">
+                        <h3 class="center">Confirm Delete</h3>
+                    </div>
+                </div>
+                <input type="hidden" name="idDelete" id = "deleteID">
+                <div class="row">
+                    <div class="col s3 push-s5">
+                        <button input = "submit" class=" btn waves-effect waves-light red large" name="action" style="margin-left: 20px;">
+                            <i class="material-icons left">delete</i>Delete
+                        </button>
+                    </div>	
+                </div>
+            </div>
+        </form>
+    </div>
 @stop
 
 @section('script')
@@ -198,6 +223,12 @@ Medical Service
             document.getElementById('editDescriptionModal').value = $("#"+itemDescription).html();
             document.getElementById('editPriceModal').value = $("#"+itemPrice).html();
 
+		});
+    });
+    
+    $(function(){
+        $(".buttonDelete").click(function(){
+            document.getElementById('deleteID').value =this.id;
 		});
     });
 

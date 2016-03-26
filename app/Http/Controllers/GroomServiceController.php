@@ -82,8 +82,10 @@ class GroomServiceController extends Controller
     }
 
     
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        GroomService::destroy($request->idDelete);
+        
+        return redirect('maintenance/groomservice')->with('message', 'Record Deleted.');
     }
 }

@@ -5,16 +5,15 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Animal extends Model
+class Breed extends Model
 {
     use SoftDeletes;
 	protected $dates = ['deleted_at'];
-    protected $table = 'tblanimal';
-    protected $primaryKey = 'intAnimalID';
+    protected $table = 'tblbreed';
+    protected $primaryKey = 'intBreedID';
     public $timestamps = false;
     
-    public function Breed()
-    {
-        return $this->belongsTo('App\Model\Breed');
+    public function Animal(){
+        return $this->hasOne('App\Model\Animal');
     }
 }

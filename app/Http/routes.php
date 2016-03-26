@@ -43,6 +43,14 @@ Route::post('/maintenance/groomservice/update', 'GroomServiceController@update')
 
 Route::post('/maintenance/groomservice/destroy', 'GroomServiceController@destroy');
 
+Route::get('/maintenance/breed', 'BreedController@index');
+
+Route::post('/maintenance/breed/create', 'BreedController@store');
+
+Route::post('/maintenance/breed/update', 'BreedController@update');
+
+Route::post('/maintenance/breed/destroy', 'BreedController@destroy');
+
 Route::resource('/maintenance/schedule', 'ScheduleController');
 
 Route::resource('/maintenance/appointments', 'AppointmentsController');

@@ -75,8 +75,10 @@ class AnimalController extends Controller
         }    
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Animal::destroy($request->idDelete);
+        
+        return redirect('maintenance/animal')->with('message', 'Record Deleted.');
     }
 }

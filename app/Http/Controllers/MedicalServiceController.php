@@ -82,8 +82,10 @@ class MedicalServiceController extends Controller
         }    
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        MedicalService::destroy($request->idDelete);
+        
+        return redirect('maintenance/medicalservice')->with('message', 'Record Deleted.');
     }
 }

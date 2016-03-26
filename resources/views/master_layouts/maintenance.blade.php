@@ -117,6 +117,9 @@
         }else if(checker == "Record Exist."){
             var toastContent = $('<span>Record Exist.</span>');
             Materialize.toast(toastContent, 1500,'red', 'edit');
+        }else if(checker == "Record Deleted."){
+            var toastContent = $('<span>Record Deleted.</span>');
+            Materialize.toast(toastContent, 1500,'green', 'edit');
         }
     });
         
