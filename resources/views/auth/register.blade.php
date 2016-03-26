@@ -93,6 +93,23 @@
 								<input  id="contactLandline" maxlength="10" type="text" class="validate" pattern="[0-9+]{7,}" required="" aria-required="true">
                                 <label data-error="Incorrect" for="contactLandline">Contact Number (Landline)</label>
 							</div>
+							
+							
+							<div class="col s1"><span style="color: #ef6c00;">Photo</span></div>
+							<div class="file-field input-field col s12">
+								
+								<div class="btn orange">
+									<span>Upload</span>
+									<input type="file">
+									
+								</div>
+								
+								<div class="file-path-wrapper">
+									<input class="file-path validate" type="text">
+								</div>
+							</div>
+							
+							
 							<div style="margin:2%;">
 								<button class="waves-effect waves-light btn-large orange right" type="submit">Ok<i class="material-icons right">send</i></button>
 							</div>
