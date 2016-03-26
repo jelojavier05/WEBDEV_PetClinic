@@ -15,14 +15,14 @@ Medical Service
 				  <!-- ============== background image end =============== -->	
 		
 				  <div class="row">
-					<div class="col s12">
-						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px; margin-left:300px; margin-top:40px;">
+					<div class="col s12 push-s1">
+						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px; margin-top:40px;">
 				<div class="row">
 					<div class="col s6 push-s1">
 						<h2 class="orange-text">Medical Service</h2>
 					</div>
 					  
-					<div class="col s2 offset-s2">
+					<div class="col s3 offset-s2">
 						<button style="margin-top: 30px;" id="btnAdd" class=" z-depth-2 btn-large green modal-trigger" href="#modaladdService"><i class="material-icons left">add</i> ADD</button>
 					</div>
 	    		  </div>
@@ -39,6 +39,7 @@ Medical Service
 										<th>ID</th>
 										<th>Name</th>
 										<th>Description</th>
+										<th>Price</th>
 									</tr>
 								</thead>
 								
@@ -51,6 +52,7 @@ Medical Service
 										<td>1</td>
 										<td>Acupuncture Theraphy</td>
 										<td>Needle puncturing</td>
+										<td>1000.00</td>
 									
 									</tr>
 									
@@ -62,6 +64,7 @@ Medical Service
 										<td>2</td>
 										<td>Blood Transfusion</td>
 										<td>Transfer of blood</td>
+										<td>1000.00</td>
 									
 									</tr>
 								
@@ -80,14 +83,7 @@ Medical Service
         <div class="modal-header orange"><h2 class="white-text">Add Medical Service</h2></div>
         	<div class="modal-content">
 
-					<div class="row">
-						<div class="col s8">
-							<div class="input-field">
-								<input  id="intServiceID" type="text" class="validate" name = "" disabled>
-									<label for="intServiceID">Medical Service ID</label>
-							</div>
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="col s5">
 							<div class="input-field">
@@ -105,7 +101,15 @@ Medical Service
 							</div>
 						</div>
 					</div>
-				
+					
+					<div class="row">
+						<div class="col s5">
+							<div class="input-field">
+								<input id="intmedPrice" type="text" class="validate" pattern="[0-9.][^A-za-z ]{1,}" name = "" required="" aria-required="true">
+									<label for="intmedPrice">Price</label> 
+							</div>
+						</div>
+					</div>
 						
 	<!-- Modal Button Save -->
 				
