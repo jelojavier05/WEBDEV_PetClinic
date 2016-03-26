@@ -19,7 +19,13 @@ Route::get('/', function () {
 Route::resource('/main/offeredservices', 'OfferedServicesController');
 
 //maintenance route
-Route::resource('/maintenance/animal', 'AnimalController');
+Route::get('/maintenance/animal', 'AnimalController@index');
+
+Route::post('/maintenance/animal/create', 'AnimalController@store');
+
+Route::post('/maintenance/animal/update', 'AnimalController@update');
+
+Route::post('/maintenance/animal/destroy', 'AnimalController@destroy');
 
 Route::resource('/maintenance/breed', 'BreedController');
 
