@@ -15,14 +15,14 @@ Schedule
 				  <!-- ============== background image end =============== -->		  
 		
 				<div class="row">
-					<div class="col s12">
-						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px; margin-left:300px; margin-top:40px;">
+					<div class="col s12 push-s1">
+						<div class="container grey lighten-2 z-depth-2" style="border-radius: 10px;  margin-top:40px;">
 				<div class="row">
 					<div class="col s4 push-s1">
 						<h2 class="orange-text">Schedule</h2>
 					</div>
 					  
-					<div class="col s2 offset-s4">
+					<div class="col s3 offset-s4">
 						<button style="margin-top: 30px;" id="btnAdd" class=" z-depth-2 btn-large green modal-trigger" href="#modaladdSchedule"><i class="material-icons left">add</i> ADD</button>
 					</div>
 	    		  </div>
