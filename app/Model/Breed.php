@@ -14,6 +14,6 @@ class Breed extends Model
     public $timestamps = false;
     
     public function Animal(){
-        return $this->hasOne('App\Model\Animal');
+        return $this->hasOne('App\Model\Animal', 'intAnimalID', 'intAnimalID');
     }
 }

@@ -63,8 +63,6 @@ Animal/Pet
         </div>
       </div>
 </div>
-
-				  <!-- ==========================Table add pet end===================-->
     
     <!-- ==========================checking in database===================-->
         @if (session('message') == "Record Added.")
@@ -80,7 +78,7 @@ Animal/Pet
         @endif
     <!-- ==========================checking in database end===================-->
 
-	<!-- ==================modal pet add====================-->			
+	       <!-- ==================modal pet add====================-->			
 	<div id="modaladdPet" class="modal modal-fixed-footer" style="overflow:hidden;">
 
         <form method="post" action="{{action('AnimalController@store')}}">
@@ -114,8 +112,6 @@ Animal/Pet
        </form>
 
     </div>
-			<!--=========================Modal add pet end=============-->
-            
             <!-- ==================modal pet update====================-->			
 	<div id="modalanimalEdit" class="modal modal-fixed-footer" style="overflow:hidden;">
         <form method="post" action="{{action('AnimalController@update')}}">
@@ -201,7 +197,6 @@ Animal/Pet
     $(function(){
         $(".buttonDelete").click(function(){
             document.getElementById('deleteID').value =this.id;
-            alert(this.id);
 		});
     });
     
