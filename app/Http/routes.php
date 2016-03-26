@@ -27,11 +27,21 @@ Route::post('/maintenance/animal/update', 'AnimalController@update');
 
 Route::post('/maintenance/animal/destroy', 'AnimalController@destroy');
 
-Route::resource('/maintenance/breed', 'BreedController');
+Route::get('/maintenance/medicalservice', 'MedicalServiceController@index');
 
-Route::resource('/maintenance/medicalservice', 'MedicalServiceController');
+Route::post('/maintenance/medicalservice/create', 'MedicalServiceController@store');
 
-Route::resource('/maintenance/groomservice', 'GroomServiceController');
+Route::post('/maintenance/medicalservice/update', 'MedicalServiceController@update');
+
+Route::post('/maintenance/medicalservice/destroy', 'MedicalServiceController@destroy');
+
+Route::get('/maintenance/groomservice', 'GroomServiceController@index');
+
+Route::post('/maintenance/groomservice/create', 'GroomServiceController@store');
+
+Route::post('/maintenance/groomservice/update', 'GroomServiceController@update');
+
+Route::post('/maintenance/groomservice/destroy', 'GroomServiceController@destroy');
 
 Route::resource('/maintenance/schedule', 'ScheduleController');
 

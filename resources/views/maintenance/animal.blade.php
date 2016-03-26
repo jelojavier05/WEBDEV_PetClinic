@@ -48,7 +48,6 @@ Animal/Pet
 
                                 <td>
                                     <form method="post" action>
-                                        <input type="hidden" name="edit_ID" id="tdID{{$key}}" value="{{$result->SupplierID}}">
                                         <button input = "submit" class="btn red" id="{{$animal->intAnimalID}}"><i class="material-icons">delete</i></button>
                                     </form>
                                 </td>
@@ -67,15 +66,15 @@ Animal/Pet
 				  <!-- ==========================Table add pet end===================-->
     
     <!-- ==========================checking in database===================-->
-    @if (session('message') == "Record Added.")
-        <input type="hidden" value="Record Added." id = "checkerID">
-    @elseif (session('message') == "Record Updated.")
-        <input type="hidden" value="Record Updated." id = "checkerID">
-    @elseif (session('message') == "Record Exist.")
-        <input type="hidden" value="Record Exist." id = "checkerID">
-    @else
-        <input type="hidden" value="" id = "checkerID">
-    @endif
+        @if (session('message') == "Record Added.")
+            <input type="hidden" value="Record Added." id = "checkerID">
+        @elseif (session('message') == "Record Updated.")
+            <input type="hidden" value="Record Updated." id = "checkerID">
+        @elseif (session('message') == "Record Exist.")
+            <input type="hidden" value="Record Exist." id = "checkerID">
+        @else
+            <input type="hidden" value="" id = "checkerID">
+        @endif
     <!-- ==========================checking in database end===================-->
 
 	<!-- ==================modal pet add====================-->			
@@ -119,7 +118,7 @@ Animal/Pet
                 <div class="row">
                     <div class="col s8">
                         <div class="input-field">
-                            <input  id="editIDModal" type="text" class="validate" name = "idEdit" readonly>
+                            <input  id="editIDModal" type="text" class="validate" name = "idEdit" readonly value =" ">
                                 <label for="PetNameEdit">Animal Species ID</label>
                         </div>
                     </div>
@@ -127,7 +126,7 @@ Animal/Pet
                 <div class="row">
                     <div class="col s5">
                         <div class="input-field">
-                            <input id="editNameModal" type="text" class="validate" name = "nameEdit" required="" aria-required="true">
+                            <input id="editNameModal" type="text" class="validate" name = "nameEdit" required="" aria-required="true" value =" ">
                                 <label for="strpetName">Animal Species Name</label> 
                         </div>
                     </div>
@@ -153,20 +152,6 @@ Animal/Pet
         });
 
     });	
-    
-    $(function(){
-        var checker = $('#checkerID').val();
-        if (checker == "Record Added."){
-            var toastContent = $('<span>Record Added.</span>');
-            Materialize.toast(toastContent, 1500,'green', 'edit');
-        }else if(checker == "Record Updated."){
-            var toastContent = $('<span>Record Updated.</span>');
-            Materialize.toast(toastContent, 1500,'green', 'edit');
-        }else if(checker == "Record Exist."){
-            var toastContent = $('<span>Record Exist.</span>');
-            Materialize.toast(toastContent, 1500,'red', 'edit');
-        }
-    });
     
     $(function(){
         $(".buttonUpdate").click(function(){

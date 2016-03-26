@@ -106,6 +106,20 @@
         $('select').material_select();
     });
         
+    $(function(){
+        var checker = $('#checkerID').val();
+        if (checker == "Record Added."){
+            var toastContent = $('<span>Record Added.</span>');
+            Materialize.toast(toastContent, 1500,'green', 'edit');
+        }else if(checker == "Record Updated."){
+            var toastContent = $('<span>Record Updated.</span>');
+            Materialize.toast(toastContent, 1500,'green', 'edit');
+        }else if(checker == "Record Exist."){
+            var toastContent = $('<span>Record Exist.</span>');
+            Materialize.toast(toastContent, 1500,'red', 'edit');
+        }
+    });
+        
   </script>
 	</body>
 	</main>

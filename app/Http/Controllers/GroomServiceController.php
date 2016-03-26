@@ -3,83 +3,85 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\GroomService;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class GroomServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        return view('/maintenance/groomservice');
+        $groomservices = GroomService::where('deleted_at', null)->get();
+
+        return view('/maintenance/groomservice', ['groomservices'=>$groomservices]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        try {
+            $checker = true;
+            $groomservice = GroomService::get();
+            
+            foreach($groomservice as $result){
+                if ($result->strGroomService == $request->nameAdd){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                $groomservice = new GroomService;
+
+                $groomservice->strGroomService = $request->nameAdd;
+                $groomservice->strDescription = $request->descriptionAdd;
+                $groomservice->fltPrice = $request->priceAdd;
+                
+                $groomservice->save();
+                
+                return redirect('maintenance/groomservice')->with('message', 'Record Added.');
+            }else{
+                return redirect('maintenance/groomservice')->with('message', 'Record Exist.');
+            }
+
+            
+        } catch (Exception $e) {
+            
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function update(Request $request)
     {
-        //
+        try {
+            
+            $checker = true;
+            $groomservice = GroomService::get();
+            
+            foreach($groomservice as $result){
+                if ($result->strGroomService == $request->nameEdit && $result->intGroomServiceID != $request->idEdit){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                GroomService::where('intGroomServiceID', $request->idEdit)
+                    ->update(['strGroomService'=>$request->nameEdit,
+                             'strDescription'=>$request->descriptionEdit,
+                             'fltPrice'=>$request->priceEdit]);
+                
+                return redirect('maintenance/groomservice')->with('message', 'Record Updated.');
+            }else{
+                return redirect('maintenance/groomservice')->with('message', 'Record Exist.');
+            }
+        } catch (Exception $e) {
+            
+        }    
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //
