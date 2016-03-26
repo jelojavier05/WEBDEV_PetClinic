@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//main
+Route::resource('/main/offeredservices', 'OfferedServicesController');
+
+
+
+
 
 //maintenance route
 Route::resource('/maintenance/animal', 'AnimalController');
@@ -26,6 +32,8 @@ Route::resource('/maintenance/medicalservice', 'MedicalServiceController');
 Route::resource('/maintenance/groomservice', 'GroomServiceController');
 
 Route::resource('/maintenance/schedule', 'ScheduleController');
+
+Route::resource('/maintenance/appointments', 'AppointmentsController');
 
 
 //login route

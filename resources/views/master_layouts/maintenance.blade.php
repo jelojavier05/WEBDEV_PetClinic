@@ -53,7 +53,7 @@
 				  
 				  <ul class="collapsible collapsible-accordion">
 					<li class="bold" style="width:280px;">
-						<a class="collapsible-header white-text" href="admin_panel.html">
+						<a class="collapsible-header white-text" href="/maintenance/appointments">
 							<i class="material-icons">people</i>Appointments
 						</a>	  
 					</li>
