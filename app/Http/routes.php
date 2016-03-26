@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 //maintenance route
 Route::resource('/maintenance/animal', 'AnimalController');
 

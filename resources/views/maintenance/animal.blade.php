@@ -74,38 +74,33 @@ Animal/Pet
 	<!-- ==================modal pet add====================-->			
 	<div id="modaladdPet" class="modal modal-fixed-footer" style="overflow:hidden;">
         <div class="modal-header orange"><h2 class="white-text">Add Animal Species</h2></div>
-        	<div class="modal-content">
-
-					<div class="row">
-						<div class="col s8">
-							<div class="input-field">
-								<input  id="intpetID" type="text" class="validate" name = "" disabled>
-									<label for="intpetID">Animal Species ID</label>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col s5">
-							<div class="input-field">
-								<input id="strpetName" type="text" class="validate" name = "" required="" aria-required="true">
-									<label for="strpetName">Animal Species Name</label> 
-							</div>
-						</div>
-					</div>
-				
-						
-	<!-- Modal Button Save -->
-				
-		<div class="modal-footer">
-			<button class="btn waves-effect waves-light" name="action" style="margin-right: 30px;" id = "btnAddSave">Save
-    			<i class="material-icons right">send</i>
-  			</button>
-    	</div>
-    		</div>
-<!--				 </form> -->
-		</div>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">	
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s8">
+                    <div class="input-field">
+                        <input  id="PetIDAdd" type="text" class="validate" name = "" disabled>
+                            <label for="PetIDAdd">Animal Species ID</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s5">
+                    <div class="input-field">
+                        <input id="PetNameAdd" type="text" class="validate" name = "" required="" aria-required="true">
+                            <label for="PetNameAdd">Animal Species Name</label> 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light" name="action" style="margin-right: 30px;" id = "btnAddSave">Save
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </div>
 			<!--=========================Modal add pet end=============-->
-<!-- ==================modal pet update====================-->			
+            <!-- ==================modal pet update====================-->			
 	<div id="modalanimalEdit" class="modal modal-fixed-footer" style="overflow:hidden;">
         <div class="modal-header orange"><h2 class="white-text">Update Animal Species</h2></div>
         	<div class="modal-content">
@@ -143,18 +138,54 @@ Animal/Pet
 @stop
 @section('script')
 
-	
-	
-	<script>
-		$(document).ready(function(){
-    		$('#datatable').DataTable({
-				"pageLength":5,
-				"lengthMenu": [5,10,15,20]
-			});
-			
-		});		
-	
-	</script>
+<script>
+    $(document).ready(function(){
+        $('#datatable').DataTable({
+            "pageLength":5,
+            "lengthMenu": [5,10,15,20]
+        });
+
+    });		
+    
+    
+    $(function(){
+        $("#btnAddSave").click(function(){
+          if ($('#PetNameAdd').val().trim()){
+              $.ajax({
+				
+				type: "POST",
+				url: "{{action('AnimalController@store')}}",
+                beforeSend: function (xhr) {
+                    var token = $('meta[name="csrf_token"]').attr('content');
+
+                    if (token) {
+                          return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                    }
+                },
+				data: {
+					animal: $('#PetNameAdd').val()
+				},
+				success: function(data){
+					var toastContent = $('<span>Record Added.</span>');
+                    Materialize.toast(toastContent, 1500,'green', 'edit');
+					window.location.href = "{{action('AnimalController@index')}}";
+				},
+				error: function(data){
+					var toastContent = $('<span>Error Occured. </span>');
+                    Materialize.toast(toastContent, 1500,'red', 'edit');
+				}
+
+			});//ajax
+            
+             }else{
+                var toastContent = $('<span>Please Check Your Input. </span>');
+                Materialize.toast(toastContent, 1500,'red', 'edit');
+            }
+
+		});//button add clicked
+    });
+
+</script>
 @stop
 
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Animal;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -37,7 +37,17 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+
+            $animal = new Animal;
+
+            $animal->strAnimalName = $request->animal;
+            
+            $animal->save();
+
+        } catch (Exception $e) {
+            
+        }
     }
 
     /**
