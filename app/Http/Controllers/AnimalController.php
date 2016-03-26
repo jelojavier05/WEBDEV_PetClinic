@@ -16,7 +16,9 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        return view('/maintenance/animal');
+        $animals = Animal::where('deleted_at', null)->get();
+
+        return view('/maintenance/animal', ['animals'=>$animals]);
     }
 
     /**
@@ -38,50 +40,60 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         try {
-
-            $animal = new Animal;
-
-            $animal->strAnimalName = $request->animal;
+            $checker = true;
+            $animals = Animal::get();
             
-            $animal->save();
+            foreach($animals as $result){
+                if ($result->strAnimalName == $request->animal){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                $animal = new Animal;
 
+                $animal->strAnimalName = $request->animal;
+
+                $animal->save();
+                
+                return redirect('maintenance/animal')->with('message', 'Record Added.');
+            }else{
+                return redirect('maintenance/animal')->with('message', 'Record Exist.');
+            }
+
+            
         } catch (Exception $e) {
             
         }
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        try {
+            
+            $checker = true;
+            $animals = Animal::get();
+            
+            foreach($animals as $result){
+                if ($result->strAnimalName == $request->nameEdit && $result->intAnimalID != $request->idEdit){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                Animal::where('intAnimalID', $request->idEdit)
+                    ->update(['strAnimalName'=>$request->nameEdit]);
+                
+                return redirect('maintenance/animal')->with('message', 'Record Updated.');
+            }else{
+                return redirect('maintenance/animal')->with('message', 'Record Exist.');
+            }
+        } catch (Exception $e) {
+            
+        }    
     }
 
     /**
