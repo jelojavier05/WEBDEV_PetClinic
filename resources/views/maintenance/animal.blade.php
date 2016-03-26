@@ -45,7 +45,7 @@ Animal/Pet
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalanimalEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalanimalDelete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Dog</td>
 									
@@ -55,7 +55,7 @@ Animal/Pet
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalanimalEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalanimalDelete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Cat</td>
 									
@@ -74,12 +74,14 @@ Animal/Pet
 	<!-- ==================modal pet add====================-->			
 	<div id="modaladdPet" class="modal modal-fixed-footer" style="overflow:hidden;">
         <div class="modal-header orange"><h2 class="white-text">Add Animal Species</h2></div>
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">	
+       
         <div class="modal-content">
+			<form>
+			 <input type="hidden" name="_token" value="{{ csrf_token() }}">	
             <div class="row">
                 <div class="col s8">
                     <div class="input-field">
-                        <input  id="PetIDAdd" type="text" class="validate" name = "" disabled>
+                        <input  id="PetIDAdd" type="text" class="validate"  disabled>
                             <label for="PetIDAdd">Animal Species ID</label>
                     </div>
                 </div>
@@ -87,7 +89,7 @@ Animal/Pet
             <div class="row">
                 <div class="col s5">
                     <div class="input-field">
-                        <input id="PetNameAdd" type="text" class="validate" name = "" required="" aria-required="true">
+                        <input id="PetNameAdd" type="text" class="validate"  required="" aria-required="true">
                             <label for="PetNameAdd">Animal Species Name</label> 
                     </div>
                 </div>
@@ -97,6 +99,7 @@ Animal/Pet
                     <i class="material-icons right">send</i>
                 </button>
             </div>
+			</form>
         </div>
     </div>
 			<!--=========================Modal add pet end=============-->
@@ -135,6 +138,33 @@ Animal/Pet
 		</div>
 			<!--=========================Modal update pet end=============-->
 
+			<!--=========================Modal delete animal start=============-->
+		<div id="modalanimalDelete" class="modal bottom-sheet" style="height: 250px !important; overflow:hidden;">
+        	<div class="modal-header orange"><h2 class="white-text">Delete</h2></div>
+				<div class="modal-content">
+
+						<div class="row">
+							<div class="col s12">
+								<h3 class="center">Confirm Delete</h3>
+							</div>
+						</div>
+
+
+
+		<!-- Modal Button Delete -->
+
+			<div class="row">
+				<div class="col s3 push-s5">
+					<button class=" btn waves-effect waves-light red large" name="action" style="margin-left: 20px;"><i class="material-icons left">delete</i>Delete</button>
+
+				</div>	
+			</div>
+
+				</div>
+<!--				 </form> -->
+		</div>
+			<!--=========================Modal delete animal end=============-->
+
 @stop
 @section('script')
 
@@ -145,10 +175,10 @@ Animal/Pet
             "lengthMenu": [5,10,15,20]
         });
 
-    });		
-    
-    
-    $(function(){
+//    });		
+//    
+//    
+//    $(function(){
         $("#btnAddSave").click(function(){
           if ($('#PetNameAdd').val().trim()){
               $.ajax({

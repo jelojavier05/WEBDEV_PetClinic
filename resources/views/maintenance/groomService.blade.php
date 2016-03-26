@@ -48,7 +48,7 @@ Grooming Service
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalgroomingserviceEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalgroomingserviceDelete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Haircut</td>
 										<td>haircut</td>
@@ -60,7 +60,7 @@ Grooming Service
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalgroomingserviceEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalgroomingserviceDelete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Pet Bath</td>
 										<td>shampoo, shower</td>
@@ -166,6 +166,33 @@ Grooming Service
 <!--				 </form> -->
 		</div>
 			<!--=========================Modal Update groom service end=============-->
+
+			<!--=========================Modal delete groom service start=============-->
+				<div id="modalgroomingserviceDelete" class="modal bottom-sheet" style="height: 250px !important; overflow:hidden;">
+        <div class="modal-header orange"><h2 class="white-text">Delete</h2></div>
+        	<div class="modal-content">
+
+					<div class="row">
+						<div class="col s12">
+							<h3 class="center">Confirm Delete</h3>
+						</div>
+					</div>
+				
+				
+						
+	<!-- Modal Button Delete -->
+				
+		<div class="row">
+			<div class="col s3 push-s5">
+				<button class=" btn waves-effect waves-light red large" name="action" style="margin-left: 20px;"><i class="material-icons left">delete</i>Delete</button>
+		
+			</div>	
+		</div>
+    	
+    		</div>
+<!--				 </form> -->
+		</div>
+			<!--=========================Modal delete groom service end=============-->
 
 @stop
 

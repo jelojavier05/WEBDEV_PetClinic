@@ -50,7 +50,7 @@ Schedule
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalscheduleEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalscheduleDelete"><i class="material-icons">delete</i></button></td>
 										<td>1</td>
 										<td>Monday</td>
 										<td>9</td>
@@ -64,7 +64,7 @@ Schedule
 										<td><button class="buttonUpdate btn modal-trigger"  name="" id="edit" href="#modalscheduleEdit" ><i class="material-icons">edit</i></button>
             							<label for="edit"></label></td>
                         
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">delete</i></button></td>
+                        				<td><button class="buttonDelete btn red modal-trigger" id="delete" href="#modalscheduleDelete"><i class="material-icons">delete</i></button></td>
 										<td>2</td>
 										<td>Wednesday</td>
 										<td>9</td>
@@ -250,6 +250,33 @@ Schedule
 <!--				 </form> -->
 		</div>
 			<!--=========================Modal update Schedule end=============-->
+
+			<!--=========================Modal delete med service start=============-->
+		<div id="modalscheduleDelete" class="modal bottom-sheet" style="height: 250px !important; overflow:hidden;">
+        	<div class="modal-header orange"><h2 class="white-text">Delete</h2></div>
+				<div class="modal-content">
+
+						<div class="row">
+							<div class="col s12">
+								<h3 class="center">Confirm Delete</h3>
+							</div>
+						</div>
+
+
+
+		<!-- Modal Button Delete -->
+
+			<div class="row">
+				<div class="col s3 push-s5">
+					<button class=" btn waves-effect waves-light red large" name="action" style="margin-left: 20px;"><i class="material-icons left">delete</i>Delete</button>
+
+				</div>	
+			</div>
+
+				</div>
+<!--				 </form> -->
+		</div>
+			<!--=========================Modal delete med service end=============-->
 @stop
 @section('script')
 
