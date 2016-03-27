@@ -73,6 +73,10 @@ Route::get('account/register', 'Auth\AuthController@getRegister');
 //mga nagagawa ng client
 Route::resource('client/clientmain', 'ClientMainController');
 
+Route::resource('client/editdetails', 'EditDetailsController');
+
+Route::resource('client/changepassword', 'ChangePasswordController');
+
 Route::resource('client/viewpets', 'ViewPetsController');
 
 Route::resource('client/addpet', 'AddPetController');
