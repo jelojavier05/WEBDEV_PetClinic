@@ -38,12 +38,12 @@
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
-			  <a href="mainLayout.html" class="brand-logo">Logo</a>
+			  <a href="mainLayout.html" class="brand-logo"><img width="79px" height="65px" src="{!! URL::asset('../images/PCGlogo.png') !!}"/></a>
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
-				<li><a href="#">Main</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a href="/main/homepage">Main</a></li>
+				<li><a href="/main/offeredservices">Services</a></li>
+				<li><a href="/client/schedule">Schedule</a></li>
 			  </ul>
 			</div>
 	    </nav>
@@ -170,7 +170,7 @@
     $(function(){
         var checker = $('#checkerID').val();
         if (checker == "1"){
-            var toastContent = $('<span>Wrong Password</span>');
+            var toastContent = $('<span>Wrong Input</span>');
             Materialize.toast(toastContent, 1500,'red', 'edit');
         }
     });

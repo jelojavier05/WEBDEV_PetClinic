@@ -36,7 +36,7 @@
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
-			  <a href="#" class="brand-logo center">Logo</a>
+				<a href="#" class="brand-logo center"><img width="79px" height="65px" src="{!! URL::asset('../images/PCGlogo.png') !!}"/></a>
 			   <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
 				<li><a class="red" href="{{action('ClientMainController@destroy')}}">Logout</a></li>

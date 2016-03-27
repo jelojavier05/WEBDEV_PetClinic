@@ -4,7 +4,7 @@
 	<head>
 	 
 	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-		<title>Registration</title>
+		<title>Services</title>
 	  <meta charset="utf-8">
 
 		<!-- ====================CSS================== -->
@@ -39,12 +39,12 @@
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
-			  <a href="#" class="brand-logo">Logo</a>
+			  <a href="#" class="brand-logo"><img width="79px" height="65px" src="{!! URL::asset('../images/PCGlogo.png') !!}"/></a>
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
 				<li><a href="/main/homepage">Main</a></li>
 				<li><a href="/main/offeredservices">Services</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a href="/client/schedule">Schedule</a></li>
 			  </ul>
 			</div>
 	    </nav>

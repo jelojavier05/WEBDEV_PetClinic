@@ -22,6 +22,8 @@ Route::get('/main/homepage', 'HomeController@index');
 
 Route::resource('/main/offeredservices', 'OfferedServicesController');
 
+Route::get('/client/schedule', 'ClientScheduleController@index');
+
 //maintenance route
 Route::get('/maintenance/animal', 'AnimalController@index');
 
@@ -81,6 +83,7 @@ Route::resource('client/editdetails', 'EditDetailsController');
 
 //mga nagagawa ng client
 Route::get('/client/clientmain', 'ClientMainController@index');
+
 
 //edit details
 Route::get('/client/editdetails', 'EditDetailsController@index');

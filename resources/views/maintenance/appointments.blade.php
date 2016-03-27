@@ -35,11 +35,13 @@ Appointments
 										<th style="width:10px;"></th>
 										<th style="width:10px;"></th>
 										<th>ID</th>
-										<th>Day</th>
-										<th>Client</th>
-										<th>Animal</th>
+										<th>Date</th>
+										<th>From</th>
+										<th>To</th>
+										<th>Client Name</th>
+										<th>Pet Name</th>
 										<th>Breed</th>
-										<th>Services</th>
+										
 									</tr>
 								</thead>
 								
@@ -50,13 +52,15 @@ Appointments
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">close</i></button></td>
 										<td>1</td>
-										<td>Monday</td>
+										<td>03-28-2016</td>
+										<td>12</td>
+										<td>15</td>
 										<td>Berto</td>
-										<td>Dog</td>
-										<td>Labrador Retriever</td>
+										<td>Bantay</td>
+										<td>Labrador</td>
 										
-										<td><button class="buttonUpdate btn orange modal-trigger"  name="" id="edit" href="#modalservices" ><i class="material-icons">pets</i></button>
-            							<label for="edit"></label></td>
+										
+										
 									
 									</tr>
 									
@@ -66,13 +70,14 @@ Appointments
                         
                         				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">close</i></button></td>
 										<td>2</td>
-										<td>Wednesday</td>
+										<td>03-28-2016</td>
+										<td>16</td>
+										<td>18</td>
 										<td>Marites</td>
-										<td>Cat</td>
+										<td>Muning</td>
 										<td>Persian</td>
 										
-										<td><button class="buttonUpdate btn orange modal-trigger"  name="" id="edit" href="#modalservices"><i class="material-icons">pets</i></button>
-            							<label for="edit"></label></td>
+										
 									
 									
 									</tr>
@@ -89,6 +94,7 @@ Appointments
 				  </div>
 				  <!-- ==========================Table add pet end===================-->
 					<!--=========================Modal Appointments Start =============-->
+<!--
 	<div id="modalservices" class="modal modal-fixed-footer" style="overflow:hidden; width:700px !important;">
         <div class="modal-header orange"><h2 class="white-text">Add Schedule</h2></div>
         	<div class="modal-content">
@@ -104,6 +110,7 @@ Appointments
 					</ul>
 			</div>
 	</div>
+-->
 	
 				
 					<!--========================Modal Appointments End =============== -->

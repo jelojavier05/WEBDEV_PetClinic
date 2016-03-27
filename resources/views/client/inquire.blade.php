@@ -27,23 +27,14 @@ Hello {{$userFirstName}}
 						<div class="col s12">
 						   
 							<div class="col s6 orange-text">
-								<label>Schedule</label>
-								 <select>
-                                    <option value="" disabled selected>Choose</option>
-                                   	<option>Mon</option>
-									<option>Tue</option>
-									<option>Wed</option>
-									<option>Thu</option>
-									<option>Fri</option>
-									<option>Sat</option>
-									<option>Sun</option>
-                                 </select>
+								<label>Date</label>
+								 <input type="date" class="datepicker">
                                             
 							</div>
 							
 							<div class="col s2">
 								<div class="input-field">
-									<input id="strpetName" type="text" class="validate" name = "" required="" aria-required="true" readonly>
+									<input id="strpetName" type="number" min="1" max="24" class="validate" name = "" required="" aria-required="true">
 										 
 								</div>
 							</div>
@@ -54,7 +45,7 @@ Hello {{$userFirstName}}
 							
 							<div class="col s2">
 								<div class="input-field">
-									<input style="margin-left:-25px;" id="strpetName" type="text" class="validate" name = "" required="" aria-required="true" readonly >
+									<input style="margin-left:-25px;" id="strpetName" type="number" min="1" max="24" class="validate" name = "" required="" aria-required="true" >
 										
 								</div>
 							</div>
@@ -70,94 +61,7 @@ Hello {{$userFirstName}}
 							</div>
 							
 							
-							<!-- =====================Medical Services Start==================== -->
-							<div class="row">
-								<div class="col s10 push-s1">
-									<h4>Medical Services</h4>
-									<div class="row">
-										<div class="col s12">
-											<table class="highlight white" id="datatable1">
-										<thead>
-											<tr>
-												<th></th>
-												<th>Name</th>
-												<th>Description</th>
-											</tr>
-										</thead>
-										
-										<tbody>
-											<tr>
-												<td><div class="col s12" style="margin:1%;">
-									   				<input type="checkbox" id="medservice1" class="filled-in checkbox-orange"/>
-      							   					<label for="medservice1" class="black-text"></label></br></div>
-												</td>
-												<td>Checkup</td>
-												<td>test test</td>
-											</tr>
-											
-											<tr>
-												<td><div class="col s12" style="margin:1%;">
-									   				<input type="checkbox" id="medservice2" class="filled-in checkbox-orange"/>
-      							   					<label for="medservice2" class="black-text"></label></br></div>
-												</td>
-												<td>Tuli</td>
-												<td>test test</td>
-											</tr>
-										</tbody>
-									
-									</table>
-										</div>
-										
-									</div>	
-									  
-								</div>
-							</div>
 							
-							
-							<!--===============Medical Services End=================== -->
-							<!-- ===============Grooming Services Start ============== -->
-							<div class="row">
-								<div class="col s10 push-s1">
-									<h4>Grooming Services</h4>
-									<div class="row">
-										<div class="col s12">
-											<table class="highlight white" id="datatable2">
-										<thead>
-											<tr>
-												<th></th>
-												<th>Name</th>
-												<th>Description</th>
-											</tr>
-										</thead>
-										
-										<tbody>
-											<tr>
-												<td><div class="col s12" style="margin:1%;">
-									   				<input type="checkbox" id="groomservice1" class="filled-in checkbox-orange"/>
-      							   					<label for="groomservice1" class="black-text"></label></br></div>
-												</td>
-												<td>Haircut</td>
-												<td>test test</td>
-											</tr>
-											
-											<tr>
-												<td><div class="col s12" style="margin:1%;">
-									   				<input type="checkbox" id="groomservice2" class="filled-in checkbox-orange"/>
-      							   					<label for="groomservice2" class="black-text"></label></br></div>
-												</td>
-												<td>Pet Shower</td>
-												<td>test test</td>
-											</tr>
-										</tbody>
-									
-									</table>
-										</div>
-										
-									</div>	
-									  
-								</div>
-							</div>
-							<!-- =============== Grooming Services End ============= -->
 							
 							
 							<div style="margin:2%;">
