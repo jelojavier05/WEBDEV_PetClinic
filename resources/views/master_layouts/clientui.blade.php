@@ -69,6 +69,21 @@
 						</a>
                             
 					  </li>
+					  
+					  <li class="bold" style="width:280px;">
+						<a class="white-text" href="/client/editdetails">
+							<i class="material-icons left">face</i>Edit Account
+						</a>
+                            
+					  </li>
+					  
+					  <li class="bold" style="width:280px;">
+						<a class="white-text" href="/client/changepassword">
+							<i class="material-icons left">vpn_key</i>Change Password
+						</a>
+                            
+					  </li>
+					  
 				  </ul>
 	    </nav>
 				
