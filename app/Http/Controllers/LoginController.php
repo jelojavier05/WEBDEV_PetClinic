@@ -11,9 +11,17 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        return view('/main/login');
+        if ($request->session()->has('user')) {
+            if ($request->session()->get('user') == 1){
+                return redirect('maintenance/appointments');
+            }else{
+                return redirect('client/clientmain');
+            }   
+        }else{
+            return view('/main/login');
+        }
     }
 
     

@@ -11,9 +11,19 @@ use App\Http\Controllers\Controller;
 class RegistrationController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        return view('/main/register');
+        
+        if ($request->session()->has('user')) {
+            if ($request->session()->get('user') == 1){
+                return redirect('maintenance/appointments');
+            }else{
+                return redirect('client/clientmain');
+            }   
+        }else{
+            return view('/main/register');
+        }
+        
     }
 
     
