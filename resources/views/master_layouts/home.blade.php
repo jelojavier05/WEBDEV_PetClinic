@@ -34,9 +34,9 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="home.html">Main</a></li>
-		<li><a href="mainLayout.html">Login/Signup</a></li>
-		<li><a href="#">Services</a></li>
+        <li><a href="/main/homepage">Main</a></li>
+		<li><a href="/account/login">Login/Signup</a></li>
+		<li><a href="/main/offeredservices">Services</a></li>
 		<li><a href="#">About Us</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>

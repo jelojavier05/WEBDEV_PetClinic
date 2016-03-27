@@ -33,7 +33,7 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/main/homepage">Main</a></li>
+        <li><a href="/client/clientmain">Main</a></li>
 		<li><a href="/client/viewpets">Tools</a></li>
 		<li><a href="/main/offeredservices">Services</a></li>
 		<li><a href="#">About Us</a></li>
