@@ -14,8 +14,18 @@ class OfferedServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->session()->has('user')) {
+            if ($request->session()->get('user') == 1){
+                return redirect('maintenance/appointments');
+            }else{
+                return redirect('client/clientmain');
+            }   
+        }else{
+            return view('/main/offeredservices');
+        }
+        
         return view('/main/offeredservices');
     }
 
