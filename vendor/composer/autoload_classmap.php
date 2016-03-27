@@ -11,6 +11,7 @@ return array(
     'CreateGroomServiceTable' => $baseDir . '/database/migrations/2016_03_26_135544_create_groom_service_table.php',
     'CreateMedicalServiceTable' => $baseDir . '/database/migrations/2016_03_26_124903_create_medical_service_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePetTable' => $baseDir . '/database/migrations/2016_03_27_132553_create_pet_table.php',
     'CreateScheduleTable' => $baseDir . '/database/migrations/2016_03_27_020641_create_schedule_table.php',
     'CreateUserInfoTable' => $baseDir . '/database/migrations/2016_03_27_071219_create_user_info_table.php',
     'CreateUserTable' => $baseDir . '/database/migrations/2016_03_27_055529_create_user_table.php',

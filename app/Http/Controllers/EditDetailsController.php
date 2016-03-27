@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\UserInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,74 +14,34 @@ class EditDetailsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/client/editdetails');
+        if ($request->session()->has('user') && $request->session()->get('user')==0) {
+            $userinfo = UserInfo::find($request->session()->get('userID'));
+            return view('client/editdetails')
+                ->with('userFirstName',$request->session()->get('userFirstName'))
+                ->with('userinfo', $userinfo);
+        }else{
+            return redirect('main/homepage');
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+  
+    public function update(Request $request)
     {
-        //
+        try {
+            
+            UserInfo::where('intUserInfoID', $request->session()->get('userID'))
+                ->update(['strFirstName'=>$request->firstName,
+                          'strLastName'=>$request->lastName,
+                          'strAddress'=>$request->address,
+                          'strContactNumber'=>$request->contactNumber]);
+            $request->session()->put('userFirstName', $request->firstName);
+            return redirect('client/editdetails')->with('message', 'Record Updated.');
+            
+        } catch (Exception $e) {
+            
+        }    
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

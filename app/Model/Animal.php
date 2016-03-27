@@ -17,4 +17,9 @@ class Animal extends Model
     {
         return $this->belongsTo('App\Model\Breed', 'intAnimalID', 'intAnimalID');
     }
+    
+    public function Pet()
+    {
+        return $this->belongsTo('App\Model\Pet', 'intAnimalID', 'intAnimalID');
+    }
 }

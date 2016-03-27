@@ -19,6 +19,12 @@ class BreedController extends Controller
         return view('/maintenance/breed')->with ('animals', $animals)->with ('breeds', $breeds);
     }
 
+    public function getBreed(){
+        $breeds = Breed::where('deleted_at', null)->get();
+		
+		return response()->json($breeds);
+    }
+    
     public function store(Request $request)
     {
         try {

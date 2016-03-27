@@ -86,4 +86,5 @@ class AnimalController extends Controller
         
         return redirect('maintenance/animal')->with('message', 'Record Deleted.');
     }
+    
 }

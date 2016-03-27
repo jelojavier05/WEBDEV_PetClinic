@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\User;
+use App\Model\UserInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,14 +25,20 @@ class LoginController extends Controller
             if ($result->strUserName == $request->username && 
                 $result->strPassword == $request->password){
                 $checker = true;
+                $userInfo = UserInfo::find($result->intUserID);
                 break;
             }
         }
         
+        
+        
         if ($checker){
             
             if ($result->intIdentifierUser == 0){//client
-                return redirect('maintenance/register');
+                $request->session()->put('user', '0');
+                $request->session()->put('userID', $result->intUserID);
+                $request->session()->put('userFirstName', $userInfo->strFirstName);
+                return redirect('client/clientmain');
             }else{//admin
                 $request->session()->put('user', '1');
                 return redirect('maintenance/animal');    

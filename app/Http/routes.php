@@ -82,13 +82,30 @@ Route::resource('client/editdetails', 'EditDetailsController');
 //mga nagagawa ng client
 Route::get('/client/clientmain', 'ClientMainController@index');
 
+//edit details
 Route::get('/client/editdetails', 'EditDetailsController@index');
 
-//Route::get('client/changepassword', 'ChangePasswordController');
+Route::post('/client/editdetails/update', 'EditDetailsController@update');
+
+
+//changepassword
+Route::get('/client/changepassword', 'ChangePasswordController@index');
+
+Route::post('/client/changepassword/update', 'ChangePasswordController@update');
+
+
 
 Route::get('/client/viewpets', 'ViewPetsController@index');
-//
+// add pet controller
 Route::get('/client/addpet', 'AddPetController@index');
+
+Route::get('/client/addpet/getBreed', 'BreedController@getBreed');
+
+Route::post('/client/addpet/create', 'AddPetController@store');
+
+
 //
-//Route::get('client/inquire', 'InquireController');
+Route::get('/client/inquire', 'InquireController@index');
+
+Route::get('/client/logout', 'ClientMainController@destroy');
 

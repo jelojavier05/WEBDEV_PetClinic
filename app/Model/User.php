@@ -15,4 +15,8 @@ class User extends Model
     {
         return $this->belongsTo('App\Model\UserInfo', 'intUserID', 'intUserID');
     }
+    
+    public function User(){
+        return $this->hasMany('App\Model\Pet', 'intUserID', 'intUserID');
+    }
 }

@@ -16,4 +16,9 @@ class Breed extends Model
     public function Animal(){
         return $this->hasOne('App\Model\Animal', 'intAnimalID', 'intAnimalID');
     }
+    
+    public function Pet()
+    {
+        return $this->belongsTo('App\Model\Pet', 'intBreedID', 'intBreedID');
+    }
 }
