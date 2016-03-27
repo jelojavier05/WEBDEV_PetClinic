@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 //main
+Route::resource('/main/homepage', 'HomeController');
+
 Route::resource('/main/offeredservices', 'OfferedServicesController');
 
 //maintenance route
@@ -69,6 +71,11 @@ Route::get('account/login', 'Auth\AuthController@getLogin');
 Route::get('account/register', 'Auth\AuthController@getRegister');
 
 //mga nagagawa ng client
+Route::resource('client/clientmain', 'ClientMainController');
+
 Route::resource('client/viewpets', 'ViewPetsController');
+
 Route::resource('client/addpet', 'AddPetController');
+
 Route::resource('client/inquire', 'InquireController');
+
