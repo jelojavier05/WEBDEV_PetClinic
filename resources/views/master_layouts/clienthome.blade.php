@@ -27,6 +27,14 @@
     	});
 	
 	</script>
+    
+    <script>
+    $(function(){
+        $('#logout').click(function(){
+            alert("test");
+        });
+    });
+</script>
 </head>
 <body>
   <nav class="orange" role="navigation">
@@ -44,10 +52,11 @@
         <li><a href="/main/homepage">Main</a></li>
 		<li><a href="/main/offeredservices">Services</a></li>
 		<li><a href="#">About Us</a></li>
-		<li><a class="red" href="#">Logout</a></li>
+		<li><a class="red" href="#" id = "logout" >Logout</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
 @yield('content')
+    

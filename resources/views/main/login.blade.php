@@ -35,7 +35,6 @@
 			<img src="{!! URL::asset('../images/petbg.jpg') !!}" style='width:100%;height:900px; opacity:0.8;' alt='[]' />
 		</div>
 		
-		
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
@@ -49,7 +48,11 @@
 			</div>
 	    </nav>
 		
-		
+		 @if (session('message') == "1")
+            <input type="hidden" value="1" id = "checkerID">
+        @else
+            <input type="hidden" value="" id = "checkerID">
+        @endif
 		
 		<!-- ===================== Home Content ================= -->
 		</br>
@@ -70,18 +73,22 @@
 					<div class="card grey lighten-2 z-depth-5" style="padding:3%; border-radius: 10px;">
 						<div class="card-content">
 							<span class="card-title">Log-In</span></br>
+								<form method = "post" action = "{{action('LoginController@postLogin')}}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    
+                                    <div class="input-field"> 
+                                        <input id="username" type="text" name = "username"><label for="username" >Username</label>
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input id="password" type="password" name = "password"><label for="password">Password</label>
+                                    </div>
+
+                                    <div class="center">
+                                        <button input = "submit" class=" btn-large orange lighten-1 z-depth-2">Login</button>
+                                    </div>
+                                </form>
 								
-								<div class="input-field">
-									<input id="username" type="text"><label for="username">Username</label>
-								</div>
-								
-								<div class="input-field">
-									<input id="password" type="password"><label for="password">Password</label>
-								</div>
-								
-								<div class="center">
-									<button class=" btn-large orange lighten-1 z-depth-2">Login</button>
-								</div>
 								</br>
 								
 								<div class="center grey-text">
@@ -159,6 +166,14 @@
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
     }
   );
+    
+    $(function(){
+        var checker = $('#checkerID').val();
+        if (checker == "1"){
+            var toastContent = $('<span>Wrong Password</span>');
+            Materialize.toast(toastContent, 1500,'red', 'edit');
+        }
+    });
 	
 </script>
 

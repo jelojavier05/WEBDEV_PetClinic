@@ -9,11 +9,16 @@ use App\Http\Controllers\Controller;
 
 class AnimalController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $animals = Animal::where('deleted_at', null)->get();
+        
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+            $animals = Animal::where('deleted_at', null)->get();
 
-        return view('/maintenance/animal', ['animals'=>$animals]);
+            return view('/maintenance/animal', ['animals'=>$animals]);
+        }else{
+            return redirect('main/homepage');
+        }
     }
 
     public function store(Request $request)

@@ -14,9 +14,15 @@ class ClientMainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/client/clientmain');
+        if ($request->session()->has('user') && $request->session()->get('user')==0) {
+
+            return view('client/clientmain');
+        }else{
+            return redirect('main/homepage');
+        }
+        
     }
 
     /**
