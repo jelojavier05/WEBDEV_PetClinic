@@ -36,7 +36,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="/client/clientmain">Main</a></li>
 		<li><a href="/client/viewpets">Tools</a></li>
-		<li><a href="/main/offeredservices">Services</a></li>
+		<li><a href="/client/clientservices">Services</a></li>
 		<li><a href="#">About Us</a></li>
 		<li><a class="red" href = "{{action('ClientMainController@destroy')}}">Logout</a></li>
       </ul>
