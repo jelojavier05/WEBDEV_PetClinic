@@ -11,12 +11,18 @@ use App\Http\Controllers\Controller;
 class BreedController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {   
-        $animals = Animal::where('deleted_at', null)->get();
-        $breeds = Breed::where('deleted_at', null)->get();
         
-        return view('/maintenance/breed')->with ('animals', $animals)->with ('breeds', $breeds);
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+            $animals = Animal::where('deleted_at', null)->get();
+            $breeds = Breed::where('deleted_at', null)->get();
+        
+            return view('/maintenance/breed')->with ('animals', $animals)->with ('breeds', $breeds);
+        }else{
+            return redirect('main/homepage');
+        }
+        
     }
 
     public function getBreed(){

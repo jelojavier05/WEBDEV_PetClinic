@@ -63,7 +63,7 @@ Route::post('/maintenance/schedule/update', 'ScheduleController@update');
 
 Route::post('/maintenance/schedule/destroy', 'ScheduleController@destroy');
 
-Route::resource('/maintenance/appointments', 'AppointmentsController');
+Route::get('/maintenance/appointments', 'AppointmentsController@index');
 
 //registration route
 Route::get('/account/register', 'RegistrationController@index');

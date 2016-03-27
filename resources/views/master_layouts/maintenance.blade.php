@@ -39,7 +39,7 @@
 			  <a href="#" class="brand-logo center">Logo</a>
 			   <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
-				<li><a class="red" href="#">Logout</a></li>
+				<li><a class="red" href="{{action('ClientMainController@destroy')}}">Logout</a></li>
 			   </ul>
 			  <div class="side-nav fixed grey darken-3">
 				  <div class="card-panel orange">

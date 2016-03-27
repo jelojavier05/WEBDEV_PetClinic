@@ -10,11 +10,17 @@ use App\Http\Controllers\Controller;
 class ScheduleController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        $schedules = Schedule::where('deleted_at', null)->get();
+        
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+            $schedules = Schedule::where('deleted_at', null)->get();
 
-        return view('/maintenance/schedule', ['schedules'=>$schedules]);
+            return view('/maintenance/schedule', ['schedules'=>$schedules]);
+        }else{
+            return redirect('main/homepage');
+        }
+        
     }
 
     

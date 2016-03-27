@@ -10,12 +10,17 @@ use App\Http\Controllers\Controller;
 class MedicalServiceController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        
-        $medicalservices = MedicalService::where('deleted_at', null)->get();
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+            $medicalservices = MedicalService::where('deleted_at', null)->get();
 
-        return view('/maintenance/medicalService', ['medicalservices'=>$medicalservices]);
+            return view('/maintenance/medicalService', ['medicalservices'=>$medicalservices]);
+        }else{
+            return redirect('main/homepage');
+        }
+        
+        
     }
 
     

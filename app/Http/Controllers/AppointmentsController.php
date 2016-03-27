@@ -14,9 +14,15 @@ class AppointmentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/maintenance/appointments');
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+
+            return view('/maintenance/appointments');
+        }else{
+            return redirect('main/homepage');
+        }
+        
     }
 
     /**

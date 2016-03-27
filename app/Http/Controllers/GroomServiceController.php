@@ -10,11 +10,17 @@ use App\Http\Controllers\Controller;
 class GroomServiceController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
-        $groomservices = GroomService::where('deleted_at', null)->get();
+        
+        if ($request->session()->has('user') && $request->session()->get('user')==1) {
+            $groomservices = GroomService::where('deleted_at', null)->get();
 
-        return view('/maintenance/groomservice', ['groomservices'=>$groomservices]);
+            return view('/maintenance/groomservice', ['groomservices'=>$groomservices]);
+        }else{
+            return redirect('main/homepage');
+        }
+        
     }
 
     

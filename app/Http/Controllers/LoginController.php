@@ -41,7 +41,7 @@ class LoginController extends Controller
                 return redirect('client/clientmain');
             }else{//admin
                 $request->session()->put('user', '1');
-                return redirect('maintenance/animal');    
+                return redirect('maintenance/appointments');    
             }
             
         }else{
