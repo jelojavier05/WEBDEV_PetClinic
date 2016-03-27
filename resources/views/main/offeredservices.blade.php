@@ -39,7 +39,7 @@
 		  
 		<nav class="orange accent-3">
 			<div class="nav-wrapper">
-			  <a href="mainLayout.html" class="brand-logo">Logo</a>
+			  <a href="#" class="brand-logo">Logo</a>
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
 				<li><a href="#">Main</a></li>

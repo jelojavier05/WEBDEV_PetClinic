@@ -75,6 +75,10 @@ Route::get('/account/login', 'LoginController@index');
 
 Route::post('/account/login/create', 'LoginController@postLogin');
 
+Route::resource('client/clientservices', 'ClientServicesController');
+
+Route::resource('client/editdetails', 'EditDetailsController');
+
 //mga nagagawa ng client
 Route::get('/client/clientmain', 'ClientMainController@index');
 
