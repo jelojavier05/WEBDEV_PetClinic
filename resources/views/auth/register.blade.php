@@ -114,6 +114,11 @@
                                 <label data-error="Incorrect" for="contactLandline">Contact Number (Landline)</label>
 							</div>
 							
+							<div class="input-field col s12">
+								<input  id="email"  type="email"  required="" aria-required="true">
+                                <label  for="email">Email</label>
+							</div>
+							
 							
 							<div class="col s1"><span style="color: #ef6c00;">Photo</span></div>
 							<div class="file-field input-field col s12">
