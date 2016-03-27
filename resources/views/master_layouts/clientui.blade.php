@@ -37,13 +37,13 @@
 			  <a href="#" class="brand-logo center">Logo</a>
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="/client/clientmain">Main</a></li>
-				<li><a class="red" href="#">Logout</a></li>
+				<li><a class="red" href = "{{action('ClientMainController@destroy')}}">Logout</a></li>
 			  </ul>
 			  <div class="side-nav fixed grey darken-3">
 				  <div class="card-panel orange">
 				  	<div class="card-content">
 						<div class="center"><img class="responsive circle" src="{!! URL::asset('../images/owner.jpg') !!}" width="150px" height="150px"></div>
-						<h5 class="center">Hello Person</h5>
+						<h5 class="center">@yield('greeting')</h5>
 					</div>
 					
 					

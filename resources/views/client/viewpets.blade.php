@@ -4,6 +4,10 @@
 Pets
 @endsection
 
+@section('greeting')
+Hello {{$userFirstName}}
+@endsection
+
 @section('content')
 
 
@@ -25,6 +29,14 @@ Pets
 					  
 					
 	    		  </div>
+                <!-- ==========================checking in database===================-->
+                @if (session('message') == "Pet Added.")
+                    <input type="hidden" value="Pet Added." id = "checkerID">
+                @else
+                    <input type="hidden" value="" id = "checkerID">
+                @endif
+				<!--============================ modal breed add ===================-->                            
+                            
 				  
 				  <!-- =================TABLE ADD PET START ======================-->
 				  	<div class="row">
@@ -42,23 +54,16 @@ Pets
 								</thead>
 								
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Bantay</td>
-										<td>Cat</td>
-										<td>Ba Cat</td>
-										<td>Kulay Blue</td>
-									
-									</tr>
-									
-									<tr>
-										<td>2</td>
-										<td>MingMing</td>
-										<td>Dog</td>
-										<td>Philippine Sheperd</td>
-										<td>Madaming Galis</td>
-									
-									</tr>
+									@foreach($pets as $pet)
+                                        <tr>
+                                            <td>{{$pet->intPetID}}</td>
+                                            <td>{{$pet->strPetName}}</td>
+                                            <td>{{$pet->Animal->strAnimalName}}</td>
+                                            <td>{{$pet->Breed->strBreedName}}</td>
+                                            <td>{{$pet->strDescription}}</td>
+
+                                        </tr>
+                                    @endforeach
 								
 								</tbody>
 
@@ -85,5 +90,12 @@ Pets
 			
 		});		
 	
+    $(function(){
+        var checker = $('#checkerID').val();
+        if (checker == "Pet Added."){
+            var toastContent = $('<span>Pet Added.</span>');
+            Materialize.toast(toastContent, 1500,'green', 'edit');
+        }
+    });
 	</script>
 @stop

@@ -14,9 +14,14 @@ class InquireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/client/inquire');
+        if ($request->session()->has('user') && $request->session()->get('user')==0) {
+
+            return view('client/inquire')->with('userFirstName',$request->session()->get('userFirstName'));
+        }else{
+            return redirect('main/homepage');
+        }
     }
 
     /**

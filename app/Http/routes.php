@@ -18,6 +18,8 @@ Route::get('/', function () {
 //main
 Route::resource('/main/homepage', 'HomeController');
 
+Route::get('/main/homepage', 'HomeController@index');
+
 Route::resource('/main/offeredservices', 'OfferedServicesController');
 
 //maintenance route
@@ -68,18 +70,42 @@ Route::get('/account/register', 'RegistrationController@index');
 
 Route::post('/account/register/create', 'RegistrationController@store');
 
-//mga nagagawa ng client
-Route::resource('client/clientmain', 'ClientMainController');
+//login route
+Route::get('/account/login', 'LoginController@index');
+
+Route::post('/account/login/create', 'LoginController@postLogin');
 
 Route::resource('client/clientservices', 'ClientServicesController');
 
 Route::resource('client/editdetails', 'EditDetailsController');
 
-Route::resource('client/changepassword', 'ChangePasswordController');
+//mga nagagawa ng client
+Route::get('/client/clientmain', 'ClientMainController@index');
 
-Route::resource('client/viewpets', 'ViewPetsController');
+//edit details
+Route::get('/client/editdetails', 'EditDetailsController@index');
 
-Route::resource('client/addpet', 'AddPetController');
+Route::post('/client/editdetails/update', 'EditDetailsController@update');
 
-Route::resource('client/inquire', 'InquireController');
+
+//changepassword
+Route::get('/client/changepassword', 'ChangePasswordController@index');
+
+Route::post('/client/changepassword/update', 'ChangePasswordController@update');
+
+
+
+Route::get('/client/viewpets', 'ViewPetsController@index');
+// add pet controller
+Route::get('/client/addpet', 'AddPetController@index');
+
+Route::get('/client/addpet/getBreed', 'BreedController@getBreed');
+
+Route::post('/client/addpet/create', 'AddPetController@store');
+
+
+//
+Route::get('/client/inquire', 'InquireController@index');
+
+Route::get('/client/logout', 'ClientMainController@destroy');
 

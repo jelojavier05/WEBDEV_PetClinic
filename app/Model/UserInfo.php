@@ -14,4 +14,6 @@ class UserInfo extends Model
     public function User(){
         return $this->hasOne('App\Model\User', 'intUserID', 'intUserID');
     }
+    
+    
 }

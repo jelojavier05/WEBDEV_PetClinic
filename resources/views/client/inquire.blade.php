@@ -4,6 +4,10 @@
 Inquire
 @endsection
 
+@section('greeting')
+Hello {{$userFirstName}}
+@endsection
+
 @section('content')
 
 <div class="row">
