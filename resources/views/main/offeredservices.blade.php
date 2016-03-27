@@ -42,8 +42,8 @@
 			  <a href="#" class="brand-logo">Logo</a>
 			  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="#"></a></li>
-				<li><a href="#">Main</a></li>
-				<li><a href="#">Services</a></li>
+				<li><a href="/main/homepage">Main</a></li>
+				<li><a href="/main/offeredservices">Services</a></li>
 				<li><a href="#">About Us</a></li>
 			  </ul>
 			</div>
