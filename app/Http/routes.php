@@ -62,11 +62,11 @@ Route::post('/maintenance/schedule/destroy', 'ScheduleController@destroy');
 Route::resource('/maintenance/appointments', 'AppointmentsController');
 
 //login route
-Route::get('account/login', 'Auth\AuthController@getLogin');
+Route::get('/account/login', 'Auth\AuthController@getLogin');
 
 
 //registration route
-Route::get('account/register', 'Auth\AuthController@getRegister');
+Route::get('/account/register', 'Auth\AuthController@getRegister');
 
 //mga nagagawa ng client
 Route::resource('client/viewpets', 'ViewPetsController');
