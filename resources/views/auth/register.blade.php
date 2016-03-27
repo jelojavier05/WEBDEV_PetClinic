@@ -29,11 +29,13 @@
 	<header>
 	</header>
 	<main>
-	<body>
+	<body class="grey ligten-3">
 		
+<!--
 		<div style='position:absolute;z-index:-1;left:0;top:0;width:100%;height:100%'>
 			<img src="{!! URL::asset('../images/petbg.jpg') !!}" style='width:100%;height:900px; opacity:0.8;' alt='[]' />
 		</div>
+-->
 		
 		
 		  
@@ -63,7 +65,25 @@
 					<div class="row">
 						
 						<div class="col s7 push-s2" style="margin:1%;">
-						   <h4>Personal Data</h4>
+						   
+							
+							<div class="input-field col s12">
+								<input  id="userName" type="text" class="validate" pattern="[A-za-z0-9 ]{2,}" required="" aria-required="true" >
+                                <label data-error="Incorrect" for="userName">UserName</label>
+							</div>
+							
+							<div class="input-field col s12">
+								<input  id="password" type="password" class="validate"  required="" aria-required="true" >
+                                <label  for="password">Password</label>
+							</div>
+							
+							<div class="input-field col s12">
+								<input  id="confirmPassword" type="password" class="validate"  required="" aria-required="true" >
+                                <label  for="confirmPassword">Confirm Password</label>
+							</div>
+							
+							<h4>Personal Data</h4>
+							
 							<div class="input-field col s12">
 								<input  id="firstName" type="text" class="validate" pattern="[A-za-z ][^0-9]{2,}" required="" aria-required="true" >
                                 <label data-error="Incorrect" for="firstName">First Name</label>
@@ -92,6 +112,11 @@
 							<div class="input-field col s12">
 								<input  id="contactLandline" maxlength="10" type="text" class="validate" pattern="[0-9+]{7,}" required="" aria-required="true">
                                 <label data-error="Incorrect" for="contactLandline">Contact Number (Landline)</label>
+							</div>
+							
+							<div class="input-field col s12">
+								<input  id="email"  type="email"  required="" aria-required="true">
+                                <label  for="email">Email</label>
 							</div>
 							
 							
