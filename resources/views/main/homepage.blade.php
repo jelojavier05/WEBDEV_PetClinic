@@ -35,7 +35,7 @@ Main
             <h2 class="center orange-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Fast and Efficient Service</h5>
 			  
-			  <p class="light">Test test test test test test test test test test test test test test test test test test test</p>
+			  <p class="light">We respond fast to your inquiries and we make sure that are service is just as fast but efficient at the same time</p>
 
             
           </div>
@@ -46,7 +46,7 @@ Main
             <h2 class="center orange-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Recognized Doctors and Personnel</h5>
 			  
-			  <p class="light">Test test test test test test test test test test test test test test test test test test test</p>
+			  <p class="light">Our Personnel are well trained and has all the important knowledge in taking care of your beloved companions</p>
 
             
           </div>
@@ -57,7 +57,7 @@ Main
             <h2 class="center orange-text"><i class="material-icons">thumb_up</i></h2>
             <h5 class="center">Customer Friendly</h5>
 			  
-			  <p class="light">Test test test test test test test test test test test test test test test test test test test</p>
+			  <p class="light">Our Personnel and Site will provide ease of usage among all users</p>
 
             
           </div>
@@ -111,23 +111,14 @@ Main
       <div class="row">
         
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">Pet Clinic</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li class="white-text">Jason Andrew Paredes</li>
+            <li class="white-text">Danisah Bryan Rosello</li>
+			<li class="white-text">BSIT 3-1N</li>
           </ul>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
+       
       </div>
     </div>
     <div class="footer-copyright">
