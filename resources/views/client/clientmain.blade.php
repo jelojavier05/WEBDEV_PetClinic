@@ -12,29 +12,29 @@ Main
       <li>
         <img src="{!! URL::asset('../images/petheadline1.jpg') !!}"> <!-- random image -->
         <div class="caption center-align">
-          <h3>Hello</h3>
-          <h5 class="light grey-text text-lighten-3">Kamusta ka?</h5>
+          <h3 style="color:#e65100">Hello</h3>
+          <h5 class="light black-text text-lighten-3">Kamusta ka?</h5>
         </div>
       </li>
       <li>
         <img src="{!! URL::asset('../images/petheadline2.jpg') !!}"> <!-- random image -->
         <div class="caption left-align">
-          <h3>Hello Ulit</h3>
-          <h5 class="light grey-text text-lighten-3">Kamusta Ka Ulit</h5>
+          <h3 style="color:#e65100">Hello Ulit</h3>
+          <h5 class="light black-text text-lighten-3">Kamusta Ka Ulit</h5>
         </div>
       </li>
       <li>
         <img src="{!! URL::asset('../images/petheadline4.jpg') !!}"> <!-- random image -->
         <div class="caption right-align">
-          <h3>Hello Ulit</h3>
-          <h5 class="light grey-text text-lighten-3">Kamusta ka na?</h5>
+          <h3 style="color:#e65100">Hello Ulit</h3>
+          <h5 class="light black-text text-lighten-3">Kamusta ka na?</h5>
         </div>
       </li>
       <li>
         <img src="{!! URL::asset('../images/petheadline5.jpg') !!}"> <!-- random image -->
         <div class="caption center-align">
-          <h3>Hi Naman</h3>
-          <h5 class="light grey-text text-lighten-3">How are you?</h5>
+          <h3 style="color:#e65100">Hi Naman</h3>
+          <h5 class="light black-text text-lighten-3">How are you?</h5>
         </div>
       </li>
     </ul>
