@@ -3,85 +3,88 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Schedule;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ScheduleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        return view('/maintenance/schedule');
+        $schedules = Schedule::where('deleted_at', null)->get();
+
+        return view('/maintenance/schedule', ['schedules'=>$schedules]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        try {
+            $checker = true;
+            $schedule = Schedule::get();
+            
+            foreach($schedule as $result){
+                if ($result->strDay == $request->dayAdd){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                $schedule = new Schedule;
+
+                $schedule->strDay = $request->dayAdd;
+                $schedule->intFrom = $request->fromAdd;
+                $schedule->intTo = $request->toAdd;
+                $schedule->save();
+                
+                return redirect('maintenance/schedule')->with('message', 'Record Added.');
+            }else{
+                return redirect('maintenance/schedule')->with('message', 'Record Exist.');
+            }
+
+            
+        } catch (Exception $e) {
+            
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function update(Request $request)
     {
-        //
+        try {
+            
+            $checker = true;
+            $schedule = Schedule::get();
+            
+            foreach($schedule as $result){
+                if ($result->strDay == $request->dayEdit && $result->intScheduleID != $request->idEdit){
+                    $checker = false;
+                    break;
+                }
+            }
+            
+            if ($checker){
+                Schedule::where('intScheduleID', $request->idEdit)
+                    ->update(['strDay'=>$request->dayEdit,
+                             'intFrom'=>$request->fromEdit,
+                             'intTo'=>$request->toEdit]);
+                
+                return redirect('maintenance/schedule')->with('message', 'Record Updated.');
+            }else{
+                return redirect('maintenance/schedule')->with('message', 'Record Exist.');
+            }
+        } catch (Exception $e) {
+            
+        }    
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    
+    public function destroy(Request $request)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        Schedule::destroy($request->idDelete);
+        
+        return redirect('maintenance/schedule')->with('message', 'Record Deleted.');
     }
 }

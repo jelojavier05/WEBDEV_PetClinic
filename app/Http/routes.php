@@ -51,10 +51,15 @@ Route::post('/maintenance/breed/update', 'BreedController@update');
 
 Route::post('/maintenance/breed/destroy', 'BreedController@destroy');
 
-Route::resource('/maintenance/schedule', 'ScheduleController');
+Route::get('/maintenance/schedule', 'ScheduleController@index');
+
+Route::post('/maintenance/schedule/create', 'ScheduleController@store');
+
+Route::post('/maintenance/schedule/update', 'ScheduleController@update');
+
+Route::post('/maintenance/schedule/destroy', 'ScheduleController@destroy');
 
 Route::resource('/maintenance/appointments', 'AppointmentsController');
-
 
 //login route
 Route::get('account/login', 'Auth\AuthController@getLogin');
