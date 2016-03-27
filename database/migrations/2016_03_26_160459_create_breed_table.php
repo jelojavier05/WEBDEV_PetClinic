@@ -17,7 +17,7 @@ class CreateBreedTable extends Migration
             $table->string('strBreedName', 100);
             $table->integer('intAnimalID')->unsigned();
             
-            $table->foreign('intAnimalID')->references('intAnimalID')->on('tblanimal')->onDelete('cascade');;
+            $table->foreign('intAnimalID')->references('intAnimalID')->on('tblanimal')->onDelete('cascade');
             $table->softDeletes();
         });
 
