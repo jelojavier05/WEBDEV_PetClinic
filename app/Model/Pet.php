@@ -23,4 +23,9 @@ class Pet extends Model
     public function Breed(){
         return $this->hasone('App\Model\Breed', 'intBreedID', 'intBreedID');
     }
+    
+     public function Appointment()
+    {
+        return $this->belongsTo('App\Model\Appointment', 'intPetID', 'intPetID');
+    }
 }

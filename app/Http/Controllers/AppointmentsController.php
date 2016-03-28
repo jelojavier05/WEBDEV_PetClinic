@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Appointment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,77 +17,37 @@ class AppointmentsController extends Controller
     public function index(Request $request)
     {
         if ($request->session()->has('user') && $request->session()->get('user')==1) {
-
-            return view('/maintenance/appointments');
+            $appointments = Appointment::where('intStatus', 1)->get();
+            
+            return view('/maintenance/appointments',['appointments'=>$appointments]);
         }else{
             return redirect('main/homepage');
         }
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function approved(Request $request){
+        try{
+            
+            Appointment::where('intAppointmentID', $request->appointmentID)
+                ->update(['intStatus'=>2]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+            return redirect('maintenance/appointments')->with('message', '1');
+        }catch(Exception $e){
+            
+        }
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    
+    public function declined(Request $request)
     {
-        //
-    }
+        try{
+            
+            Appointment::where('intAppointmentID', $request->appointmentID)
+                ->update(['intStatus'=>0]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            return redirect('maintenance/appointments')->with('message', '0');
+        }catch(Exception $e){
+            
+        }
     }
 }

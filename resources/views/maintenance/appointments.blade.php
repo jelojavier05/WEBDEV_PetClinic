@@ -24,6 +24,15 @@ Appointments
 					  
 					
 	    		  </div>
+                            
+                            
+        @if (session('message') == "1")
+            <input type="hidden" value="1" id = "checkerID">
+        @elseif (session('message') == "0")
+            <input type="hidden" value="0" id = "checkerID">
+        @else
+            <input type="hidden" value="" id = "checkerID">
+        @endif
 				  
 				  <!-- =================TABLE ADD PET START ======================-->
 				  	<div class="row">
@@ -37,7 +46,7 @@ Appointments
 										<th>ID</th>
 										<th>Date</th>
 										<th>Time</th>
-										<th>Client Name</th>
+										<th>Client Username</th>
 										<th>Pet Name</th>
 										<th>Breed</th>
 										
@@ -45,40 +54,36 @@ Appointments
 								</thead>
 								
 								<tbody>
-									<tr>
-										<td><button class="buttonUpdate btn"  name="" id="edit" href="#" ><i class="material-icons">check</i></button>
-            							<label for="edit"></label></td>
-                        
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">close</i></button></td>
-										<td>1</td>
-										<td>03-28-2016</td>
-										<td>12</td>
-										<td>Berto</td>
-										<td>Bantay</td>
-										<td>Labrador</td>
-										
-										
-										
-									
-									</tr>
-									
-									<tr>
-										<td><button class="buttonUpdate btn"  name="" id="edit" href="#" ><i class="material-icons">check</i></button>
-            							<label for="edit"></label></td>
-                        
-                        				<td><button class="buttonDelete btn red" id="delete"><i class="material-icons">close</i></button></td>
-										<td>2</td>
-										<td>03-28-2016</td>
-										<td>16</td>
-										<td>Marites</td>
-										<td>Muning</td>
-										<td>Persian</td>
-										
-										
-									
-									
-									</tr>
-								
+									@foreach($appointments as $appointment)
+                                        <tr>
+                                            <form method="post" action="{{action('AppointmentsController@approved')}}">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <td>
+                                                    <input type="hidden" name="appointmentID" value="{{$appointment->intAppointmentID}}">
+                                                    <button class="buttonUpdate btn" id="{{$appointment->intAppointmentID}}" >
+                                                        <i class="material-icons">check</i>
+                                                    </button>
+                                                    <label for="{{$appointment->intAppointmentID}}"></label>
+                                                </td>
+                                            </form>
+                                            <form method="post" action="{{action('AppointmentsController@declined')}}">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <td>
+                                                    <input type="hidden" name="appointmentID" value="{{$appointment->intAppointmentID}}">
+                                                    <button input = "submit" class="buttonDelete btn red" id="{{$appointment->intAppointmentID}}">
+                                                        <i class="material-icons">close</i>
+                                                    </button>
+                                                </td>
+                                            </form>
+                                            
+                                            <td>{{$appointment->intAppointmentID}}</td>
+                                            <td>{{$appointment->dateAppointment}}</td>
+                                            <td>{{$appointment->intTime}}</td>
+                                            <td>{{$appointment->User->strUserName}}</td>
+                                            <td>{{$appointment->Pet->strPetName}}</td>
+                                            <td>{{$appointment->Pet->Breed->strBreedName}}</td>
+                                        </tr>
+								    @endforeach
 								</tbody>
 
 
@@ -125,6 +130,17 @@ Appointments
 			});
 			
 		});		
+        
+    $(function(){
+        var checker = $('#checkerID').val();
+        if (checker == "1"){
+            var toastContent = $('<span>Appointment Approved.</span>');
+            Materialize.toast(toastContent, 1500,'green', 'edit');
+        }else if(checker == "0"){
+            var toastContent = $('<span>Appointment Declined.</span>');
+            Materialize.toast(toastContent, 1500,'red', 'edit');
+        }
+    });
 	
 	</script>
 @stop

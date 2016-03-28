@@ -22,45 +22,48 @@ Hello {{$userFirstName}}
 	    		  </div>
 				  
 				  <!-- ================================inquire form start================================== -->
-							
-		<div class="row">
-						<div class="col s12">
-						   
-							<div class="col s6 orange-text">
-								<label>Date</label>
-								 <input type="date" class="datepicker">
-                                            
-							</div>
-							
-							<div class="col s2">
-								
-								<div class="input-field">
-									<label>Hour</label>
-									<input id="strpetName" type="number" min="1" max="24" class="validate" name = "" required="" aria-required="true">
-										 
-								</div>
-							</div>
-				
-							
-							<div class="col s6 pull-s6 orange-text">
-								<label>Pet Name</label>
-								 <select>
-                                    <option value="" disabled selected>Choose</option>
-                                    <option value="1">Bantay</option>
-                                    <option value="2">Mingming</option>
-                                 </select>
-                                            
-							</div>
-							
-							
-							
-							
-							
-							<div style="margin:2%;">
-								<a class="waves-effect waves-light btn-large orange right">Ok<i class="material-icons right">send</i></a>
-							</div>
-						</div>
-		</div>
+        @if (session('message') == "1")
+            <input type="hidden" value="1" id = "checkerID">
+        @elseif (session('message') == "0")
+            <input type="hidden" value="0" id = "checkerID">
+        @else
+            <input type="hidden" value="" id = "checkerID">
+        @endif		
+                            
+                            
+<div class="row">
+    <form method="post" action = "{{action('InquireController@store')}}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="col s12">
+            <div class="col s6 orange-text">
+                <label>Date</label>
+                 <input type="date" class="datepicker" name = "dateAppointment">
+            </div>
+            <div class="col s2">
+
+                <div class="input-field">
+                    <label>Time </label>
+                    <input id="strpetName" type="number" min="1" max="24" class="validate" name = "time" required="" aria-required="true">
+
+                </div>
+            </div>
+            <div class="col s6 pull-s6 orange-text">
+                <label>Pet Name</label>
+                 <select name = "petName">
+                    <option value="" disabled selected>Choose</option>
+                    @foreach($pets as $pet)
+                        <option value = "{{$pet->intPetID}}">{{$pet->strPetName}}</option>
+                    @endforeach
+                 </select>
+
+            </div>
+            <div style="margin:2%;">
+                <button input = "submit" class="waves-effect waves-light btn-large orange right" type="submit">Send<i class="material-icons right">send</i></button>
+            </div>
+        </div>
+    </form>
+        
+</div>
 							
 							
 				<!-- ================================inquire form end================================== -->
@@ -78,6 +81,14 @@ Hello {{$userFirstName}}
 			});
 			
 		});		
+        
+        $(function(){
+            var checker = $('#checkerID').val();
+            if (checker == "1"){
+                var toastContent = $('<span>Successful</span>');
+                Materialize.toast(toastContent, 1500,'green', 'edit');
+            }
+        });
 	
 	</script>
 @stop

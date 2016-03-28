@@ -67,6 +67,12 @@ Route::post('/maintenance/schedule/destroy', 'ScheduleController@destroy');
 
 Route::get('/maintenance/appointments', 'AppointmentsController@index');
 
+Route::post('/maintenance/schedule/approved', 'AppointmentsController@approved');
+
+Route::post('/maintenance/schedule/declined', 'AppointmentsController@declined');
+
+Route::post('/maintenance/schedule/destroy', 'ScheduleController@destroy');
+
 //registration route
 Route::get('/account/register', 'RegistrationController@index');
 
@@ -109,6 +115,8 @@ Route::post('/client/addpet/create', 'AddPetController@store');
 
 //
 Route::get('/client/inquire', 'InquireController@index');
+
+Route::post('/client/inquire/create', 'InquireController@store');
 
 Route::get('/client/logout', 'ClientMainController@destroy');
 
