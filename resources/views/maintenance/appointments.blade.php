@@ -36,8 +36,7 @@ Appointments
 										<th style="width:10px;"></th>
 										<th>ID</th>
 										<th>Date</th>
-										<th>From</th>
-										<th>To</th>
+										<th>Time</th>
 										<th>Client Name</th>
 										<th>Pet Name</th>
 										<th>Breed</th>
@@ -54,7 +53,6 @@ Appointments
 										<td>1</td>
 										<td>03-28-2016</td>
 										<td>12</td>
-										<td>15</td>
 										<td>Berto</td>
 										<td>Bantay</td>
 										<td>Labrador</td>
@@ -72,7 +70,6 @@ Appointments
 										<td>2</td>
 										<td>03-28-2016</td>
 										<td>16</td>
-										<td>18</td>
 										<td>Marites</td>
 										<td>Muning</td>
 										<td>Persian</td>

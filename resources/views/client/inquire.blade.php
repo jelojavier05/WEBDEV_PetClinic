@@ -33,22 +33,14 @@ Hello {{$userFirstName}}
 							</div>
 							
 							<div class="col s2">
+								
 								<div class="input-field">
+									<label>Hour</label>
 									<input id="strpetName" type="number" min="1" max="24" class="validate" name = "" required="" aria-required="true">
 										 
 								</div>
 							</div>
-							
-							<div class="col s1">
-								<div style="font-size:20px; margin-top:20px;">To</div>
-							</div>
-							
-							<div class="col s2">
-								<div class="input-field">
-									<input style="margin-left:-25px;" id="strpetName" type="number" min="1" max="24" class="validate" name = "" required="" aria-required="true" >
-										
-								</div>
-							</div>
+				
 							
 							<div class="col s6 pull-s6 orange-text">
 								<label>Pet Name</label>
