@@ -30,6 +30,16 @@
     
 </head>
 <body>
+
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+  
   <nav class="orange" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo"><img width="79px" height="65px" src="{!! URL::asset('../images/PCGlogo.png') !!}"/></a>
@@ -38,6 +48,7 @@
 		<li><a href="/client/viewpets">Tools</a></li>
 		<li><a href="/client/clientservices">Services</a></li>
 		<li><a href="/client/schedule">Schedule</a></li>
+		<li><div class="fb-share-button" data-href="http://paredes-rosello.herokuapp.com/main/homepage" data-layout="button_count"></div></li>
 		
 		<li><a class="red" href = "{{action('ClientMainController@destroy')}}">Logout</a></li>
       </ul>
