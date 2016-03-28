@@ -19,14 +19,28 @@ Services Offered
 						<div class="col s6">
 							<h3>Medical Services</h3>
 								<div class="row">
-									<div class="col s6 push-s1">
-										<ul style="font-size: 18px;">
-											@foreach($medicalservices as $medicalservice)
-                                            
-                                                <li>{{$medicalservice->strMedicalService}}</li>
-                                            
-                                            @endforeach
-										</ul>
+									<div class="col s7 push-s1">
+										<table class="highlight white">
+											<thead>
+												<tr>
+													<th>Medical Service</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												
+                                               @foreach($medicalservices as $medicalservice)
+                                                <tr>
+													<td>{{$medicalservice->strMedicalService}}</td>
+													<td>{{$medicalservice->strDescription}}</td>
+													<td>{{$medicalservice->fltPrice}}</td>
+												</tr>
+												@endforeach
+												
+											</tbody>
+										</table>
 									</div>
 								</div>
 					
@@ -35,13 +49,28 @@ Services Offered
 						<div class="col s6">
 							<h3>Grooming Services</h3>
 								<div class="row">
-									<div class="col s6 push-s1">
-										<ul style="font-size: 18px;">
-											@foreach($groomservices as $groomservice)
-                                            
-                                                <li>{{$groomservice->strGroomService}}</li>
-                                            @endforeach
-										</ul>
+									<div class="col s7 push-s1">
+										<table class="highlight white">
+											<thead>
+												<tr>
+													<th>Grooming Service</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												
+                                               @foreach($groomservices as $groomservice)
+                                                <tr>
+													<td>{{$groomservice->strGroomService}}</td>
+													<td>{{$groomservice->strDescription}}</td>
+													<td>{{$groomservice->fltPrice}}</td>
+												</tr>
+												@endforeach
+												
+											</tbody>
+										</table>
 									</div>
 								</div>
 						</div>
