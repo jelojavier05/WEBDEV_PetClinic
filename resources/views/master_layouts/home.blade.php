@@ -39,7 +39,7 @@
         <li><a href="/main/homepage">Main</a></li>
 		<li><a href="/account/login">Login/Signup</a></li>
 		<li><a href="/main/offeredservices">Services</a></li>
-		<li><div class="fb-share-button" data-href="http://paredes-rosello.herokuapp.com/main/homepage" data-layout="button_count" style="padding-bottom:10px;"></div></li>
+		<li><div class="fb-share-button" data-href="http://paredes-rosello.herokuapp.com/main/homepage" data-layout="button_count" style="position:absolute; padding-bottom:10px;"></div></li>
 		
 		
       </ul>
