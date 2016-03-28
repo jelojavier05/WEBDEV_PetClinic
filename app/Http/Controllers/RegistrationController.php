@@ -61,6 +61,7 @@ class RegistrationController extends Controller
 
                 $user->strUserName = $request->usernameAdd;
                 $user->strPassword = $request->passwordAdd;
+                $user->intIdentifierUser = 0;
 
                 $user->save();
                 
