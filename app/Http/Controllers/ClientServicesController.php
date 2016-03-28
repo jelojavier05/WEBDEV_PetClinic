@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\GroomService;
+use App\Model\MedicalService;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,9 +15,21 @@ class ClientServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/client/clientservices');
+        if ($request->session()->has('user')) {
+            
+            if ($request->session()->get('user') == 1){
+                return redirect('maintenance/appointments');
+            }else{
+                $medicalservices = MedicalService::where('deleted_at', null)->get();
+                $groomservices = GroomService::where('deleted_at', null)->get();
+                return view('/client/clientservices')->with('medicalservices', $medicalservices)->with ('groomservices', $groomservices);
+                
+            }   
+        }else{
+            return redirect('main/homepage');
+        }
     }
 
     /**

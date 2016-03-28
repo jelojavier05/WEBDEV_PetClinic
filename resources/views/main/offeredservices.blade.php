@@ -62,8 +62,11 @@
 								<div class="row">
 									<div class="col s6 push-s1">
 										<ul style="font-size: 18px;">
-											<li>Heart Transplant</li>
-											<li>Tuli</li>
+											@foreach($medicalservices as $medicalservice)
+                                            
+                                                <li>{{$medicalservice->strMedicalService}}</li>
+                                            
+                                            @endforeach
 										</ul>
 									</div>
 								</div>
@@ -75,8 +78,10 @@
 								<div class="row">
 									<div class="col s6 push-s1">
 										<ul style="font-size: 18px;">
-											<li>Pet Shower</li>
-											<li>Haircut</li>
+											@foreach($groomservices as $groomservice)
+                                            
+                                                <li>{{$groomservice->strGroomService}}</li>
+                                            @endforeach
 										</ul>
 									</div>
 								</div>

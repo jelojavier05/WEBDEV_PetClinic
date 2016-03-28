@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\GroomService;
+use App\Model\MedicalService;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,16 +18,17 @@ class OfferedServicesController extends Controller
     public function index(Request $request)
     {
         if ($request->session()->has('user')) {
+            
             if ($request->session()->get('user') == 1){
                 return redirect('maintenance/appointments');
             }else{
                 return redirect('client/clientmain');
             }   
         }else{
-            return view('/main/offeredservices');
+            $medicalservices = MedicalService::where('deleted_at', null)->get();
+            $groomservices = GroomService::where('deleted_at', null)->get();
+            return view('/main/offeredservices')->with('medicalservices', $medicalservices)->with ('groomservices', $groomservices);
         }
-        
-        return view('/main/offeredservices');
     }
 
     /**

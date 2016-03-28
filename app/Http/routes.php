@@ -20,10 +20,9 @@ Route::resource('/main/homepage', 'HomeController');
 
 Route::get('/main/homepage', 'HomeController@index');
 
-Route::resource('/main/offeredservices', 'OfferedServicesController');
+Route::get('/main/offeredservices', 'OfferedServicesController@index');
 
 Route::get('/client/schedule', 'ClientScheduleController@index');
-
 //maintenance route
 Route::get('/maintenance/animal', 'AnimalController@index');
 

@@ -28,17 +28,15 @@ Schedule
 											</thead>
 											
 											<tbody>
-												<tr>
-													<td>Monday</td>
-													<td>8</td>
-													<td>15</td>
-												</tr>
 												
-												<tr>
-													<td>Tuesday</td>
-													<td>9</td>
-													<td>18</td>
+                                                @foreach($schedules as $schedule)
+                                                <tr>
+													<td>{{$schedule->strDay}}</td>
+													<td>{{$schedule->intFrom}}</td>
+													<td>{{$schedule->intTo}}</td>
 												</tr>
+												@endforeach
+												
 											</tbody>
 										</table>
 									</div>

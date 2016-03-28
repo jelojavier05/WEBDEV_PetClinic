@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Schedule;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -14,9 +14,20 @@ class ClientScheduleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('/client/schedule');
+        
+        if ($request->session()->has('user')) {
+            
+            if ($request->session()->get('user') == 1){
+                return redirect('maintenance/appointments');
+            }else{
+                $schedules = Schedule::where('deleted_at', null)->get();
+                return view('/client/schedule')->with('schedules', $schedules);
+            }   
+        }else{
+            return redirect('main/homepage');
+        }
     }
 
     /**
