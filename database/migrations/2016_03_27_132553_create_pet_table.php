@@ -21,7 +21,7 @@ class CreatePetTable extends Migration
             $table->integer('intUserID')->unsigned();
             
             $table->foreign('intAnimalID')->references('intAnimalID')->on('tblanimal')->onDelete('cascade');
-            $table->foreign('intBreedID')->references('intBreedID')->on('tblBreed')->onDelete('cascade');
+            $table->foreign('intBreedID')->references('intBreedID')->on('tblbreed')->onDelete('cascade');
             $table->foreign('intUserID')->references('intUserID')->on('tbluser')->onDelete('cascade');
         });
 
